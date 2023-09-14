@@ -50,7 +50,6 @@ function createFiles(
 
 
    for (let i = 1; i < num + 1; i++){
-    console.log(i, num)
     let [task, solution] = generateSingleTask(size=size, operation=operation)
 
     taskContent += i.toString() + ")" + "$" +

@@ -24,7 +24,6 @@ app.post('/create_file', (req, res) => {
     const title = String(req.body.title)
     const fileName = String(req.body.fileName)
 
-    console.log(num)
     createFiles(num, 
                 size, 
                 "Addition", 
@@ -33,7 +32,7 @@ app.post('/create_file', (req, res) => {
 
     const filePath = path.join(projectDirectory, 'latex', fileName + ".pdf");
 
-    res.setHeader('Content-Disposition', `attachment; filename="${fileName}"+".pdf"`);
+    res.setHeader('Content-Disposition', `attachment; filename="${fileName}.pdf"`);
     res.sendFile(filePath);
 
     res.sendFile(projectDirectory + "\\latex\\" + fileName + ".pdf")
