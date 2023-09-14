@@ -1,5 +1,8 @@
-const fs = require('fs');
-const { exec } = require('child_process');
+const exec = require('child_process')
+const fs = require('fs')
+const path = require('path')
+
+const projectDirectory = path.join(__dirname, '..', '..');
 
 function getRandomNumber(size = 3) {
   return Math.floor(Math.random() * (10 ** size - 10 ** (size - 1)) + 10 ** (size - 1))
@@ -11,10 +14,16 @@ function generateSingleTask(size = 3, operation = "Addition") {
   return [a.toString() + "+" + b.toString(), a+b]
 }
 
-function createFiles(num, size, operation, title, path) 
+function createFiles(
+  num, 
+  size, 
+  operation, 
+  title,
+  fileName) 
 {
-  
-  let taskPath = path + "\\task.tex"
+  const path = projectDirectory + '\\latex'
+
+  let taskPath = path + "\\" + fileName + ".tex"
   let solutionPath = path + "\\solution.tex"
 
   let preamble = "" +
@@ -41,6 +50,7 @@ function createFiles(num, size, operation, title, path)
 
 
    for (let i = 1; i < num + 1; i++){
+    console.log(i, num)
     let [task, solution] = generateSingleTask(size=size, operation=operation)
 
     taskContent += i.toString() + ")" + "$" +
@@ -64,9 +74,9 @@ function createFiles(num, size, operation, title, path)
   const taskCommand = `pdflatex -output-directory=${path} ${taskPath}`
   const solutionCommand = `pdflatex -output-directory=${path} ${solutionPath}`
 
-  exec(taskCommand)
-  exec(solutionCommand)
+  exec.execSync(taskCommand)
+  exec.execSync(solutionCommand)
 }
 
-createFiles(num=200, size=5, operation='Addition', title='Простыня', 
-path='C:\\Users\\User\\Desktop\\Prostynya\\Prostynya\\latex')
+module.exports = { createFiles };
+
