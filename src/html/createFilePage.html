@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Простыня</title>
+    </head>
+    <body>
+        <div class="container" style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%)">
+            <p id="title" class="title">Конфигурация файла</p>
+        </div>
+        <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+            <form class="form" method="post" action="/create_file">
+                <input class="form_item" type="number" name="num" placeholder="Количество задач">
+                <input class="form_item" type="number" name="size" placeholder="Длина чисел">
+                <input class="form_item" type="text" name="title" placeholder="Заголовок">
+                <input class="form_item" type="text" name="fileName" placeholder="Имя файла">
+                <button class="submit_button" type="submit">Сгенерировать</button>
+            </form>
+        </div>
+        
+    </body>
+</html>

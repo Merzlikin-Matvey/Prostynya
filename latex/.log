@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.7)  16 SEP 2023 18:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.7)  16 SEP 2023 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/User/Desktop/Prostynya/Prostynya/latex/solution.tex
-(C:/Users/User/Desktop/Prostynya/Prostynya/latex/solution.tex
+**C:/Users/User/Desktop/Prostynya/Prostynya/latex/.tex
+(C:/Users/User/Desktop/Prostynya/Prostynya/latex/.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30>
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -390,144 +390,29 @@ Package babel Info: Default for \cyrdash is provided on input line 163.
 russian.tex
 Package babel Info: Importing font and identification data for russian
 (babel)             from babel-ru.ini. Reported on input line 11.
-) (C:\Users\User\Desktop\Prostynya\Prostynya\latex\solution.aux
-LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 5
-.
-
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmr.fd
-File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
+No file "".aux.
+! I can't write on file `.aux'.
+\document ...ate \openout \@mainaux \jobname .aux 
+                                                  \immediate \write \@mainau...
+l.8 \begin{document}
+                    
+(Press Enter to retry, or Control-C to exit; default file extension is `.tex')
+Please type another output file name: 
+! Emergency stop.
+\document ...ate \openout \@mainaux \jobname .aux 
+                                                  \immediate \write \@mainau...
+l.8 \begin{document}
+                    
+End of file on the terminal!
 
-LaTeX Font Warning: Font shape `T2A/cmr/m/n' in size <15> not available
-(Font)              size <14.4> substituted on input line 5.
-
-)
-\openout1 = `solution.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: custom
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
-* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=483.69687pt
-* \textheight=731.23584pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
-* \topmargin=-52.36449pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=13.49995pt plus 5.99934pt minus 3.00063pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Info: Redefining \th on input line 8.
-
-LaTeX Font Warning: Font shape `T2A/cmr/m/n' in size <17.99995> not available
-(Font)              size <17.28> substituted on input line 10.
-
-
-LaTeX Font Warning: Font shape `T2A/cmr/m/it' in size <17.99995> not available
-(Font)              size <17.28> substituted on input line 10.
-
-LaTeX Font Info:    Calculating math sizes for size <15> on input line 12.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.49995> not available
-(Font)              size <10.95> substituted on input line 12.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 12.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <15> not available
-(Font)              size <14.4> substituted on input line 12.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.49995> not available
-(Font)              size <10.95> substituted on input line 12.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 12.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <15> not available
-(Font)              size <14.4> substituted on input line 12.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.49995> not available
-(Font)              size <10.95> substituted on input line 12.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 12.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <15> on input line 12.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.49995> on input line 12.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.5> on input line 12.
-[1
-
-{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-(C:\Users\User\Desktop\Prostynya\Prostynya\latex\solution.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.71996pt have occurred.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 3196 strings out of 476331
- 52209 string characters out of 5788238
- 1850660 words of memory out of 5000000
- 23636 multiletter control sequences out of 15000+600000
- 516601 words of font info for 41 fonts, out of 8000000 for 9000
+ 3095 strings out of 476331
+ 49797 string characters out of 5788238
+ 1849660 words of memory out of 5000000
+ 23549 multiletter control sequences out of 15000+600000
+ 512585 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,5n,77p,316b,196s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm144
-0.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati
-1728.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr12.pfb>
-Output written on C:\Users\User\Desktop\Prostynya\Prostynya\latex\solution.pdf 
-(1 page, 14904 bytes).
-PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 72i,0n,77p,308b,100s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

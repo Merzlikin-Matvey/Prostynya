@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/User/Desktop/Prostynya/Prostynya/latex/solution.tex
-(C:/Users/User/Desktop/Prostynya/Prostynya/latex/solution.tex
+**C:/Users/User/Desktop/Prostynya/Prostynya/latex/f.tex
+(C:/Users/User/Desktop/Prostynya/Prostynya/latex/f.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30>
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -390,7 +390,7 @@ Package babel Info: Default for \cyrdash is provided on input line 163.
 russian.tex
 Package babel Info: Importing font and identification data for russian
 (babel)             from babel-ru.ini. Reported on input line 11.
-) (C:\Users\User\Desktop\Prostynya\Prostynya\latex\solution.aux
+) (C:\Users\User\Desktop\Prostynya\Prostynya\latex\f.aux
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 5
 .
 
@@ -402,7 +402,7 @@ LaTeX Font Warning: Font shape `T2A/cmr/m/n' in size <15> not available
 (Font)              size <14.4> substituted on input line 5.
 
 )
-\openout1 = `solution.aux'.
+\openout1 = `f.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -506,7 +506,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-(C:\Users\User\Desktop\Prostynya\Prostynya\latex\solution.aux)
+(C:\Users\User\Desktop\Prostynya\Prostynya\latex\f.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.71996pt have occurred.
@@ -514,20 +514,20 @@ LaTeX Font Warning: Size substitutions with differences
  ) 
 Here is how much of TeX's memory you used:
  3196 strings out of 476331
- 52209 string characters out of 5788238
+ 52125 string characters out of 5788238
  1850660 words of memory out of 5000000
  23636 multiletter control sequences out of 15000+600000
  516601 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,5n,77p,316b,196s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,5n,77p,309b,196s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm144
 0.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati
 1728.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmr12.pfb>
-Output written on C:\Users\User\Desktop\Prostynya\Prostynya\latex\solution.pdf 
-(1 page, 14904 bytes).
+Output written on C:\Users\User\Desktop\Prostynya\Prostynya\latex\f.pdf (1 page
+, 12515 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 23 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,71 @@
+/* Фон */
+body {
+    background-color: #202125; /* Цвет фона */
+}
+
+/* Стиль кнопки */
+.button {
+    width: 420px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+    background-color: transparent; /* Прозрачный фон */
+    border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
+    border-radius: 100px; /* Закругленные углы */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Курсор в виде указателя при наведении */
+    font-size: 24pt; /* Размер шрифта */
+    font-family: 'Rubik', sans-serif; /* Шрифт */
+    
+}
+
+/* Стили для наведения курсора на кнопку */
+.button:hover {
+    background-color: white; /* Белый фон при наведении */
+    color: black; /* Черный цвет текста при наведении */
+}
+
+
+/* Стиль заголовков */
+.title {
+    color: white;
+    font-size: 40pt;
+    font-family: 'Rubik', sans-serif; /* Шрифт */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form_item {
+    width: 400px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+    background-color: transparent; /* Прозрачный фон */
+    border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
+    border-radius: 100px; /* Закругленные углы */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Курсор в виде указателя при наведении */
+    font-size: 20pt; /* Размер шрифта */
+    font-family: 'Rubik', sans-serif; /* Шрифт */
+}
+
+.submit_button {
+    width: 400px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+    background-color: transparent; /* Прозрачный фон */
+    border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
+    border-radius: 100px; /* Закругленные углы */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Курсор в виде указателя при наведении */
+    font-size: 20pt; /* Размер шрифта */
+    font-family: 'Rubik', sans-serif; /* Шрифт */
+}
+
+.task {
+    color: white;
+    font-size: 70pt;
+    font-family: 'Rubik', sans-serif; /* Шрифт */
+}

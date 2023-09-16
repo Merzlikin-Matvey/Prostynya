@@ -77,5 +77,5 @@ function createFiles(
   exec.execSync(solutionCommand)
 }
 
-module.exports = { createFiles };
+module.exports = { createFiles, generateSingleTask };
 
