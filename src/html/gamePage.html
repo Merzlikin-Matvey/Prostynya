@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример обновления текста с помощью JavaScript</title>
+</head>
+<body>
+    <p id="task">xyz</p>
+    
+    <form id="form">
+        <input type="text" id="answer" placeholder="Введите ответ">
+    </form>
+    
+    <script>
+        var myAnswers = []
+        var realAnswers = []
+        function generateNewTask(event) {
+            event.preventDefault(); 
+            
+            var xhr = new XMLHttpRequest();
+            
+            var size = 5
+            
+            xhr.open("POST", "/new_task", true);
+            
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var responseArray = JSON.parse(xhr.responseText); 
+                    if (Array.isArray(responseArray) && responseArray.length >= 1) {
+                        var firstValue = responseArray[0]; 
+                        var secondValue = Number(responseArray[1]); 
+                        document.getElementById("task").textContent = firstValue;
+                        realAnswers.push(secondValue)
+                    }
+                }
+
+                var answerInput = document.getElementById("answer");
+                var newAnswer = answerInput.value;
+                myAnswers.push(newAnswer);
+                
+                answerInput.value = "";
+                displayAnswersInConsole();
+            };
+            
+            var data = "size=" + encodeURIComponent(size) 
+            xhr.send(data);
+        }
+
+        function displayAnswersInConsole() {
+            console.log("Ответы:");
+            for (var i = 0; i < myAnswers.length; i++) {
+                console.log(myAnswers[i]);
+            }
+            for (var i = 0; i < realAnswers.length; i++) {
+                console.log(realAnswers[i]);
+            }
+        }
+        
+        document.getElementById("form").addEventListener("submit", generateNewTask);
+
+        document.getElementById("answer").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                generateNewTask(event)
+            }
+        });
+    </script>
+</body>
+</html>

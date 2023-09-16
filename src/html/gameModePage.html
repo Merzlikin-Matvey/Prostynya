@@ -8,11 +8,10 @@
         <title>Простыня</title>        
     </head>
     <body>
-        <div class="container" style="position: absolute; top: 15%; left: 50%; transform: translate(-50%, -50%)">
-            <p id="task" class="task">Задача</p>
-        </div>
-        <div class="container" style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%)">
-            <input id="input" type="number">
-        </div>
+        <form class="form" method="post" action="/start_game">
+            <input class="form_item" type="number" name="num" placeholder="Количество задач">
+            <input class="form_item" type="number" name="size" placeholder="Длина чисел">
+            <button class="submit_button" type="submit">Сгенерировать</button>
+        </form>
     </body>
 </html>
