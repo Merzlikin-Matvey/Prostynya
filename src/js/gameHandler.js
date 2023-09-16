@@ -1,7 +1,7 @@
 const { generateSingleTask } = require('./tasks');
 
 const redirect = (req, res) => {
-    res.redirect('/gamePage');
+    res.redirect('/gamePage' + '?size=' + req.body.size + '&num=' + req.body.num);
 }
 
 function newTask(size){

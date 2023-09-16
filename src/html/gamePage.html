@@ -4,7 +4,7 @@
     <title>Пример обновления текста с помощью JavaScript</title>
 </head>
 <body>
-    <p id="task">xyz</p>
+    <p id="task">1000-7</p>
     
     <form id="form">
         <input type="text" id="answer" placeholder="Введите ответ">
@@ -13,12 +13,54 @@
     <script>
         var myAnswers = []
         var realAnswers = []
+        var currentTask = 0
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var tasks = parseInt(urlParams.get("num"), 10)
+        var size = parseInt(urlParams.get("size"), 10)
+        console.log(tasks)
+
+
+        function whatToDo(event){
+            if (currentTask < tasks){
+                generateNewTask(event)
+                getNewAnswer()
+            }
+            else if (currentTask == tasks){
+                getNewAnswer()
+                checkAnswers()
+            }
+            currentTask += 1
+        }
+
+        function checkAnswers(){
+            console.log(myAnswers)
+            console.log(realAnswers)
+            
+            var result = 0
+            for (let i = 0; i < myAnswers.length; i++){
+                if (myAnswers[i] == realAnswers[i]){
+                    result += 1
+                }
+            }
+            window.location.assign(
+                "/resultPage" + '?num=' + tasks + '&result=' + result)
+        }
+
+        function getNewAnswer(){
+            var answerInput = document.getElementById("answer");
+                var newAnswer = answerInput.value;
+                if (newAnswer.trim() !== "") { 
+                    myAnswers.push(newAnswer);
+                }
+                answerInput.value = "";
+        }
+
         function generateNewTask(event) {
             event.preventDefault(); 
+            console.log(currentTask)
             
             var xhr = new XMLHttpRequest();
-            
-            var size = 5
             
             xhr.open("POST", "/new_task", true);
             
@@ -34,34 +76,20 @@
                         realAnswers.push(secondValue)
                     }
                 }
-
-                var answerInput = document.getElementById("answer");
-                var newAnswer = answerInput.value;
-                myAnswers.push(newAnswer);
-                
-                answerInput.value = "";
-                displayAnswersInConsole();
-            };
+            }
             
             var data = "size=" + encodeURIComponent(size) 
             xhr.send(data);
         }
-
-        function displayAnswersInConsole() {
-            console.log("Ответы:");
-            for (var i = 0; i < myAnswers.length; i++) {
-                console.log(myAnswers[i]);
-            }
-            for (var i = 0; i < realAnswers.length; i++) {
-                console.log(realAnswers[i]);
-            }
-        }
         
+
+        document.addEventListener("DOMContentLoaded", whatToDo)
+
         document.getElementById("form").addEventListener("submit", generateNewTask);
 
         document.getElementById("answer").addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
-                generateNewTask(event)
+                whatToDo(event)
             }
         });
     </script>

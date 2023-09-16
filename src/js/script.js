@@ -28,6 +28,10 @@ app.get('/gamePage', (req, res) => {
     res.sendFile(projectDirectory + '/src/html/gamePage.html')
 });
 
+app.get('/resultPage', (req, res) => {
+    res.sendFile(projectDirectory + '/src/html/resultPage.html')
+})
+
 app.post('/create_file', require('./createFileHandler'));
 
 app.post('/start_game', require('./gameHandler').redirect)
@@ -35,6 +39,10 @@ app.post('/start_game', require('./gameHandler').redirect)
 app.post('/new_task', (req, res) => {
     res.send(newTask(Number(req.body.size), "Addition"));
 });
+
+app.get('/result', (req, res) => {
+    res.redirect('/resultPage' + '?num=' + req.body.num + '&result=' + req.body.result);
+})
 
 app.listen(PORT, () => {
     console.log(`Сервер запущен на порту ${PORT}`);
