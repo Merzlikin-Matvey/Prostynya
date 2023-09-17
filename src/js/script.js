@@ -45,6 +45,11 @@ app.get("/result", (req, res) => {
   );
 });
 
+app.post("/download", (req, res) => {
+    res.setHeader('Content-Disposition', `attachment; filename="00317SEP230742_solution.pdf"`);
+    res.sendFile("C:\\Users\\User\\Desktop\\newProstynya\\Prostynya\\latex\\00317SEP230742_solution.pdf");
+})
+
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
 });

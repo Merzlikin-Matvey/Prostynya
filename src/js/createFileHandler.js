@@ -26,7 +26,8 @@ const generateFile = (req, res) => {
             fileName
         );
         
-        res.send(paths);
+        res.setHeader('Content-Disposition', `attachment; filename="${fileName}.pdf"`);
+        res.sendFile(paths[0]);
 }
 
 module.exports = { generateFile }
