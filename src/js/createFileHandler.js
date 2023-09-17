@@ -1,17 +1,31 @@
 const path = require('path');
-const { createFiles } = require('./tasks');
+const { createFile } = require('./tasks');
+
+function getFileName(filePath) {
+    return fileName = path.basename(filePath)
+  }
 
 module.exports = (req, res) => {
-    const num = Number(req.body.num);
-    const size = Number(req.body.size);
-    const title = String(req.body.title);
-    const fileName = String(req.body.fileName);
+        const num = Number(req.body.num);
+        const size = Number(req.body.size);
+        const operation = "Addition";
+        const title = String(req.body.title);
+        const fileName = String(req.body.fileName);
+        const variants = 1;
+        const writeID = true;
 
-    createFiles(num, size, "Addition", title, fileName);
+        paths = createFile(
+            num, 
+            size, 
+            operation, 
+            title, 
+            fileName
+        );
+        res.setHeader('Content-Disposition', `attachment; filename="${fileName}.pdf"`);
+        res.sendFile(paths[0]);
+}
 
-    const projectDirectory = path.join(__dirname, '..', '..');
-    const filePath = path.join(projectDirectory, 'latex', fileName + ".pdf");
 
-    res.setHeader('Content-Disposition', `attachment; filename="${fileName}.pdf"`);
-    res.sendFile(filePath);
-};
+
+
+

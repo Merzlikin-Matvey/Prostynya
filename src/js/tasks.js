@@ -1,6 +1,7 @@
 const exec = require('child_process')
 const fs = require('fs')
 const path = require('path')
+const { DateTime } = require("luxon");
 
 const projectDirectory = path.join(__dirname, '..', '..');
 
@@ -11,20 +12,42 @@ function getRandomNumber(size = 3) {
 function generateSingleTask(size = 3, operation = "Addition") {
   let a = getRandomNumber(size)
   let b = getRandomNumber(size)
-  return [a.toString() + "+" + b.toString(), a+b]
+  if (operation == "Addition"){
+    return [a.toString() + "+" + b.toString(), a+b]
+  }
+  else if (operation == "Multiplication"){
+    return [a.toString() + "*" + b.toString(), a*b]
+  }
 }
 
-function createFiles(
-  num, 
-  size, 
-  operation, 
-  title,
-  fileName) 
+function generateID(variant = 1){
+  const now = DateTime.now().setZone('Europe/Moscow');
+  const monthInWords = now.setLocale('en').toLocaleString({ month: 'short' }).toUpperCase();
+  const formattedNow = now.toFormat('SSS:dd yyhhmm').toLocaleString().split(' ');
+
+  const id = formattedNow[0] + monthInWords + formattedNow[1]
+  return id
+}
+
+function createFile(
+  num = 70, 
+  size = 5, 
+  operation = "Addition", 
+  title = "Простыня",
+  fileName = '',
+  variants = 1,
+  writeID = true) 
 {
   const path = projectDirectory + '\\latex'
+  const id = generateID()
+
+  if (!fileName){
+    fileName = "x"
+  }
+  solutionName = fileName + '_solution'
 
   let taskPath = path + "\\" + fileName + ".tex"
-  let solutionPath = path + "\\solution.tex"
+  let solutionPath = path + "\\" + solutionName + ".tex"
 
   let preamble = "" +
   "\\documentclass{article} \n" + 
@@ -75,7 +98,12 @@ function createFiles(
 
   exec.execSync(taskCommand)
   exec.execSync(solutionCommand)
+
+  taskPDFPath = path +  '\\' + fileName + '.pdf'
+  solutionPDFPath = path + '\\' + solutionName + '.pdf'
+  return [taskPDFPath, solutionPDFPath]
 }
 
-module.exports = { createFiles, generateSingleTask };
+module.exports = { createFile, generateSingleTask };
+
 

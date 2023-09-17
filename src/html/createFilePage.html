@@ -12,11 +12,11 @@
             <p id="title" class="title">Конфигурация файла</p>
         </div>
         <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
-            <form class="form" method="post" action="/create_file">
-                <input class="form_item" type="number" name="num" placeholder="Количество задач">
-                <input class="form_item" type="number" name="size" placeholder="Длина чисел">
-                <input class="form_item" type="text" name="title" placeholder="Заголовок">
-                <input class="form_item" type="text" name="fileName" placeholder="Имя файла">
+            <form class="form" method="post" action="/create_file" novalidate>
+                <input class="form_item" type="number" name="num" placeholder="Количество задач" required>
+                <input class="form_item" type="number" name="size" placeholder="Длина чисел" required>
+                <input class="form_item" type="text" name="title" placeholder="Заголовок" required>
+                <input class="form_item" type="text" name="fileName" placeholder="Имя файла" required>
                 <button class="submit_button" type="submit">Сгенерировать</button>
             </form>
         </div>
