@@ -1,18 +1,22 @@
 const path = require('path');
-const { createFile } = require('./tasks');
+const { createFile, generateID } = require('./tasks');
 
 function getFileName(filePath) {
     return fileName = path.basename(filePath)
   }
 
-module.exports = (req, res) => {
-        const num = Number(req.body.num);
-        const size = Number(req.body.size);
-        const operation = "Addition";
-        const title = String(req.body.title);
-        const fileName = String(req.body.fileName);
-        const variants = 1;
-        const writeID = true;
+const generateFile = (req, res) => {
+        let num = Number(req.body.num);
+        let size = Number(req.body.size);
+        let operation = "Addition";
+        let title = String(req.body.title);
+        let fileName = String(req.body.fileName);
+        let variants = 1;
+        let writeID = true;
+
+        if (!fileName || fileName == 'undefined' || fileName == undefined){
+            fileName = generateID()
+        }
 
         paths = createFile(
             num, 
@@ -21,9 +25,11 @@ module.exports = (req, res) => {
             title, 
             fileName
         );
-        res.setHeader('Content-Disposition', `attachment; filename="${fileName}.pdf"`);
-        res.sendFile(paths[0]);
+        
+        res.send(paths);
 }
+
+module.exports = { generateFile }
 
 
 

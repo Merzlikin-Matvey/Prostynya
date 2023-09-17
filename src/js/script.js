@@ -31,7 +31,7 @@ app.get("/resultPage", (req, res) => {
   res.sendFile(projectDirectory + "/src/html/resultPage.html");
 });
 
-app.post("/create_file", require("./createFileHandler"));
+app.post("/create_file", require("./createFileHandler").generateFile);
 
 app.post("/start_game", require("./gameHandler").redirect);
 

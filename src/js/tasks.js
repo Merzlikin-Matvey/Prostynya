@@ -23,7 +23,7 @@ function generateSingleTask(size = 3, operation = "Addition") {
 function generateID(variant = 1){
   const now = DateTime.now().setZone('Europe/Moscow');
   const monthInWords = now.setLocale('en').toLocaleString({ month: 'short' }).toUpperCase();
-  const formattedNow = now.toFormat('SSS:dd yyhhmm').toLocaleString().split(' ');
+  const formattedNow = now.toFormat('SSSdd yyhhmm').toLocaleString().split(' ');
 
   const id = formattedNow[0] + monthInWords + formattedNow[1]
   return id
@@ -42,8 +42,9 @@ function createFile(
   const id = generateID()
 
   if (!fileName){
-    fileName = "x"
+    fileName = generateID()
   }
+
   solutionName = fileName + '_solution'
 
   let taskPath = path + "\\" + fileName + ".tex"
@@ -101,9 +102,12 @@ function createFile(
 
   taskPDFPath = path +  '\\' + fileName + '.pdf'
   solutionPDFPath = path + '\\' + solutionName + '.pdf'
-  return [taskPDFPath, solutionPDFPath]
+
+  paths = [taskPDFPath, solutionPDFPath]
+  return paths
 }
 
-module.exports = { createFile, generateSingleTask };
+module.exports = { createFile, generateSingleTask, generateID };
+
 
 

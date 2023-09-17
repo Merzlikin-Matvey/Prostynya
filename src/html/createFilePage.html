@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <title>Простыня</title>
-    </head>
-    <body>
-        <div class="container" style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%)">
-            <p id="title" class="title">Конфигурация файла</p>
-        </div>
-        <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
-            <form class="form" method="post" action="/create_file" novalidate>
-                <input class="form_item" type="number" name="num" placeholder="Количество задач" required>
-                <input class="form_item" type="number" name="size" placeholder="Длина чисел" required>
-                <input class="form_item" type="text" name="title" placeholder="Заголовок" required>
-                <input class="form_item" type="text" name="fileName" placeholder="Имя файла" required>
-                <button class="submit_button" type="submit">Сгенерировать</button>
-            </form>
-        </div>
-        
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Простыня</title>
+</head>
+<body>
+    <div class="container" style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%)">
+        <p id="title" class="title">Конфигурация файла</p>
+    </div>
+    <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+        <form id="myForm" class="form" method="post" action="/create_file" novalidate>
+            <input class="form_item" type="number" name="num" placeholder="Количество задач" required>
+            <input class="form_item" type="number" name="size" placeholder="Длина чисел" required>
+            <input class="form_item" type="text" name="title" placeholder="Заголовок" required>
+            <input class="form_item" type="text" name="fileName" placeholder="Имя файла" required>
+            <button class="submit_button" type="submit">Сгенерировать</button>
+        </form>
+
+        <script>
+            document.getElementById("myForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const num = document.getElementsByName("num")[0].value;
+                const size = document.getElementsByName("size")[0].value;
+                const title = document.getElementsByName("title")[0].value;
+                const fileName = document.getElementsByName("fileName")[0].value;
+
+                const data = {
+                    num: num,
+                    size: size,
+                    title: title,
+                    fileName: fileName
+                };
+
+                fetch('/create_file', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (Array.isArray(result) && result.length >= 1) {
+                        const firstString = result[0];
+                        document.getElementById("title").textContent = firstString;
+                    } 
+                })
+            });
+        </script>
+    </div>
+    
+</body>
 </html>
