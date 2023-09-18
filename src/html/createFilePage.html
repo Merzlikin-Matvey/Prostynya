@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="createFilePage.css" />
     <title>Простыня</title>
   </head>
   <body>
@@ -28,36 +28,36 @@
         transform: translate(-50%, -50%);
       "
     >
-      <form id="myForm" class="form">
+      <form id="myForm">
         <input
           id="num"
-          class="form_item"
+          class="input"
           type="number"
           name="num"
           placeholder="Количество задач"
         />
         <input
           id="size"
-          class="form_item"
+          class="input"
           type="number"
           name="size"
           placeholder="Длина чисел"
         />
         <input
           id="fileTitle"
-          class="form_item"
+          class="input"
           type="text"
           name="fileTitle"
           placeholder="Заголовок"
         />
         <input
           id="fileName"
-          class="form_item"
+          class="input"
           type="text"
           name="fileName"
           placeholder="Имя файла"
         />
-        <button class="submit_button" type="submit">Сгенерировать</button>
+        <button class="button" type="submit" id="generateButton">Сгенерировать</button>
       </form>
     </div>
 

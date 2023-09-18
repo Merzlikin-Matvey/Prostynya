@@ -65,7 +65,13 @@ body {
 }
 
 .task {
-    color: white;
-    font-size: 70pt;
+    color: white; /* Цвет текста */
+    font-size: 60pt; /* Размер текста */
+    font-family: 'Rubik', sans-serif; /* Шрифт */
+}
+
+.just_text {
+    font-size: 18pt; /* Размер текста */
+    color: white; /* Цвет текста */
     font-family: 'Rubik', sans-serif; /* Шрифт */
 }

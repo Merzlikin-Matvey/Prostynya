@@ -1,0 +1,22 @@
+body {
+    background-color: #202125; /* Цвет фона */
+}
+
+#title {
+    color: white;
+    font-size: 40pt;
+    font-family: 'Rubik', sans-serif; /* Шрифт */
+}
+
+.button {
+    width: 420px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+    background-color: transparent; /* Прозрачный фон */
+    border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
+    border-radius: 100px; /* Закругленные углы */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Курсор в виде указателя при наведении */
+    font-size: 24pt; /* Размер шрифта */
+    font-family: 'Rubik', sans-serif; /* Шрифт */
+}
