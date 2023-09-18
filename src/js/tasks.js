@@ -68,7 +68,7 @@ function createFile(
 
   let solutionContent = preamble +
   "\\begin{center} \n" +
-  "   \\large{\\textit{" + title + " - решение" + "}} \n" +
+  "   \\large{\\textit{" + title + " - ответы" + "}} \n" +
   "\\end{center}" +
   "\\begin{multicols}{2}\n"
 

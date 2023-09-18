@@ -1,27 +1,175 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Простыня</title>
-</head>
-<body>
-    <div class="container" style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%)">
-        <p id="title" class="title">Конфигурация файла</p>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <p id="title" class="title">Конфигурация файла</p>
     </div>
-    <div class="container" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%)">
-        <form id="myForm" class="form" method="post" action="/create_file" novalidate>
-            <input class="form_item" type="number" name="num" placeholder="Количество задач" required>
-            <input class="form_item" type="number" name="size" placeholder="Длина чисел" required>
-            <input class="form_item" type="text" name="title" placeholder="Заголовок" required>
-            <input class="form_item" type="text" name="fileName" placeholder="Имя файла" required>
-            <button class="submit_button" type="submit">Сгенерировать</button>
-        </form>
+    <div
+      class="container"
+      style="
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <form id="myForm" class="form">
+        <input
+          id="num"
+          class="form_item"
+          type="number"
+          name="num"
+          placeholder="Количество задач"
+        />
+        <input
+          id="size"
+          class="form_item"
+          type="number"
+          name="size"
+          placeholder="Длина чисел"
+        />
+        <input
+          id="fileTitle"
+          class="form_item"
+          type="text"
+          name="fileTitle"
+          placeholder="Заголовок"
+        />
+        <input
+          id="fileName"
+          class="form_item"
+          type="text"
+          name="fileName"
+          placeholder="Имя файла"
+        />
+        <button class="submit_button" type="submit">Сгенерировать</button>
+      </form>
     </div>
 
+    <div
+      class="container"
+      style="
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <form method="post" action="/download" id="downloadTaskForm">
+        <input
+          type="hidden"
+          name="filePath"
+          id="downloadTaskFilePath"
+          value="NOPATH"
+        />
+        <button
+          class="submit_button"
+          type="submit"
+          id="downloadTaskButton"
+          style="display: none"
+        >
+          Скачать задачи
+        </button>
+      </form>
 
-    
-</body>
+      <form method="post" action="/download" id="downloadSolutionForm">
+        <input
+          type="hidden"
+          name="filePath"
+          id="downloadSolutionFilePath"
+          value="NOPATH"
+        />
+        <button
+          class="submit_button"
+          type="submit"
+          id="downloadSolutionButton"
+          style="display: none"
+        >
+          Скачать ответы
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function generateFiles(event) {
+        event.preventDefault();
+
+        const num = document.getElementById("num").value;
+        const size = document.getElementById("size").value;
+        const fileTitle = document.getElementById("fileTitle").value;
+        const fileName = document.getElementById("fileName").value;
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("POST", "/create_file", true);
+
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var responseArray = JSON.parse(xhr.responseText);
+
+            const downloadTaskButton =
+              document.getElementById("downloadTaskButton");
+            const downloadSolutionButton = document.getElementById(
+              "downloadSolutionButton"
+            );
+
+            if (
+              downloadTaskButton.value == "NOPATH" ||
+              downloadSolutionButton.value == "NOPATH" ||
+              downloadTaskButton.value.length == 0 ||
+              downloadSolutionButton.value.length == 0
+            ) {
+              downloadTaskButton.style.display = "block";
+              downloadSolutionButton.style.display = "block";
+              console.log("ОТКРЫТЬ");
+            }
+            console.log(downloadTaskButton.value, downloadSolutionButton.value);
+
+            const downloadFilePath = document.getElementById(
+              "downloadTaskFilePath"
+            );
+            const downloadSolutionPath = document.getElementById(
+              "downloadSolutionFilePath"
+            );
+
+            downloadFilePath.value = responseArray[0];
+            downloadSolutionPath.value = responseArray[1];
+          }
+        };
+
+        var data =
+          "num=" +
+          encodeURIComponent(num) +
+          "&size=" +
+          encodeURIComponent(size) +
+          "&fileTitle=" +
+          encodeURIComponent(fileTitle) +
+          "&fileName=" +
+          encodeURIComponent(fileName);
+        xhr.send(data);
+      }
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", generateFiles);
+    </script>
+  </body>
 </html>
