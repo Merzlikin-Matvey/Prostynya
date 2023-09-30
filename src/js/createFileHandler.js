@@ -34,7 +34,7 @@ const downloadFile = (req, res) => {
   let fileName = getFileName(filePath);
   res.setHeader(
     "Content-Disposition",
-    `attachment; filename="${fileName}.pdf"`
+    `attachment; filename="${fileName}"`
   );
   res.sendFile(filePath);
 };

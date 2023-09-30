@@ -62,23 +62,17 @@
     </div>
 
     <div
-      class="container"
-      style="
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      "
-    >
-      <form method="post" action="/download" id="downloadTaskForm">
+      class="container" id="download_form">
+      <form method="post" action="/download" id="downloadTaskForm" >
         <input
           type="hidden"
           name="filePath"
           id="downloadTaskFilePath"
           value="NOPATH"
+          
         />
         <button
-          class="submit_button"
+          class="button"
           type="submit"
           id="downloadTaskButton"
           style="display: none"
@@ -87,7 +81,7 @@
         </button>
       </form>
 
-      <form method="post" action="/download" id="downloadSolutionForm">
+      <form method="post" action="/download" id="downloadSolutionForm" class="download_form">
         <input
           type="hidden"
           name="filePath"
@@ -95,7 +89,7 @@
           value="NOPATH"
         />
         <button
-          class="submit_button"
+          class="button"
           type="submit"
           id="downloadSolutionButton"
           style="display: none"

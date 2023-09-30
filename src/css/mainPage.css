@@ -2,10 +2,18 @@ body {
     background-color: #202125; /* Цвет фона */
 }
 
+@font-face {
+    font-family: 'Futura';
+    src: local('Futura ExtraBold'), local('Futura-ExtraBold'),
+        url('../../fonts/FuturaLT-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+  }
+
 #title {
     color: white;
     font-size: 40pt;
-    font-family: 'Rubik', sans-serif; /* Шрифт */
+    font-family: 'Futura'; /* Шрифт */
 }
 
 .button {
