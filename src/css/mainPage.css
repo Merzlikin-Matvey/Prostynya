@@ -13,12 +13,9 @@ body {
 #title {
     color: white;
     font-size: 40pt;
-<<<<<<< HEAD
     font-family: 'Rubik'; /* Шрифт */
-=======
-    font-family: 'Futura'; /* Шрифт */
->>>>>>> 56549c0529ddbc79aa0bd2767bb195524da9c870
 }
+
 
 .button {
     width: 420px; /* Ширина кнопки */

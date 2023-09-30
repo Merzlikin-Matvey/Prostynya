@@ -57,19 +57,19 @@
           name="fileName"
           placeholder="Имя файла"
         />
-        <button class="button" type="submit" id="generateButton">Сгенерировать</button>
+        <button class="button" type="submit" id="generateButton">
+          Сгенерировать
+        </button>
       </form>
     </div>
 
-    <div
-      class="container" id="download_form">
-      <form method="post" action="/download" id="downloadTaskForm" >
+    <div class="container" id="download_form">
+      <form method="post" action="/download" id="downloadTaskForm">
         <input
           type="hidden"
           name="filePath"
           id="downloadTaskFilePath"
           value="NOPATH"
-          
         />
         <button
           class="button"
@@ -81,7 +81,12 @@
         </button>
       </form>
 
-      <form method="post" action="/download" id="downloadSolutionForm" class="download_form">
+      <form
+        method="post"
+        action="/download"
+        id="downloadSolutionForm"
+        class="download_form"
+      >
         <input
           type="hidden"
           name="filePath"

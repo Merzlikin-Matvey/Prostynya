@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
@@ -18,20 +18,18 @@
             <button id="createFileButton" class="button">Создать лист</button>
             <button id="gameModeButton" class="button">Игровой режим</button>
         <div class="container">
-    <script>
-        var myButton = document.getElementById("createFileButton");
-        myButton.addEventListener("click", function() {
-            window.location.href = "createFilePage";
-        });
-    </script>
-
-<script>
-    var myButton = document.getElementById("gameModeButton");
-    myButton.addEventListener("click", function() {
-        window.location.href = "finiteGameModePage";
-    });
-</script>
-
 
     </body>
+    <script>
+        var createFileButton = document.getElementById("createFileButton");
+        var gameModeButton = document.getElementById("gameModeButton");
+
+        createFileButton.addEventListener("click", function() {
+            window.location.href = "createFilePage";
+        });
+        gameModeButton.addEventListener("click", function() {
+            window.location.href = "finiteGameModePage";
+        });
+
+    </script>
 </html>
