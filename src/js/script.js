@@ -10,6 +10,8 @@ const projectDirectory = path.join(__dirname, "..", "..");
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "..", "/css")));
+app.use(express.static(path.join(__dirname, "..", "/..", "/fonts")));
+console.log(path.join(__dirname, "..", "/..", "/fonts"))
 
 app.get("/", (req, res) => {
   res.sendFile(projectDirectory + "/src/html/mainPage.html");

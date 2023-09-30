@@ -5,7 +5,7 @@ body {
 #title {
     color: white;
     font-size: 40pt;
-    font-family: 'Rubik', sans-serif; /* Шрифт */
+    font-family: 'Rubik'; /* Шрифт */
 }
 
 .button {
