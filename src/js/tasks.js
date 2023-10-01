@@ -58,7 +58,10 @@ function createFile(
   "\\usepackage[fontsize=15pt]{fontsize} \n" +
   "\\usepackage[russian]{babel} \n" +
   "\n" +
-  "\\pagestyle{empty} \n" +
+  "\\usepackage{fancyhdr} \n" +
+  "\\pagestyle{fancy} \n" +
+  "\\renewcommand{\\headrulewidth}{0pt}" +
+  "\\lfoot{ID: " + id + "}" +
   "\\begin{document} \n" 
 
   let taskContent = preamble + 
@@ -85,7 +88,10 @@ function createFile(
 
     solutionContent += i.toString() + ")" + "$" +
       "\\,".repeat(1 + 2*(Math.floor(Math.log10(num + 1)) - Math.floor(Math.log10(i)))) +
-      solution.toString() + "$ \\par \n" 
+      solution.toString() + "\\,".repeat(2*(size + 1 - 
+        Math.floor(Math.log10(solution)) - 1))  + "$ \\par \n" 
+        console.log(size + 1 - 
+          Math.floor(Math.log10(solution)))
    }
 
   taskContent += "\\end{center} \n"
