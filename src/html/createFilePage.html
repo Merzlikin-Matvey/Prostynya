@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="createFilePage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Простыня</title>
   </head>
   <body>
@@ -23,7 +27,7 @@
       class="container"
       style="
         position: absolute;
-        top: 40%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
       "
@@ -50,6 +54,7 @@
           name="fileTitle"
           placeholder="Заголовок"
         />
+
         <input
           id="fileName"
           class="input"
@@ -57,11 +62,12 @@
           name="fileName"
           placeholder="Имя файла"
         />
-        <button class="button" type="submit" id="generateButton">
-          Сгенерировать
-        </button>
       </form>
+      <button class="button" type="submit" id="generateButton" , form="myForm">
+        Сгенерировать
+      </button>
     </div>
+    
 
     <div class="container" id="download_form">
       <form method="post" action="/download" id="downloadTaskForm">

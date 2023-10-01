@@ -1,6 +1,6 @@
 /* Фон */
 body {
-    background-color: #202125; /* Цвет фона */
+    background-color: #1A1A1A; /* Цвет фона */
 }
 
 /* Стиль кнопки */
@@ -24,14 +24,7 @@ body {
     color: black; /* Черный цвет текста при наведении */
 }
 
-
-/* Стиль заголовков */
-.title {
-    color: white;
-    font-size: 40pt;
-    font-family: 'Rubik', sans-serif; /* Шрифт */
-}
-
+/* Параметры формы */
 .form {
     display: flex;
     flex-direction: column;
@@ -49,6 +42,7 @@ body {
     cursor: pointer; /* Курсор в виде указателя при наведении */
     font-size: 20pt; /* Размер шрифта */
     font-family: 'Rubik', sans-serif; /* Шрифт */
+    margin-bottom: 10px; /* Отступ снизу */
 }
 
 .submit_button {
@@ -64,14 +58,3 @@ body {
     font-family: 'Rubik', sans-serif; /* Шрифт */
 }
 
-.task {
-    color: white; /* Цвет текста */
-    font-size: 60pt; /* Размер текста */
-    font-family: 'Rubik', sans-serif; /* Шрифт */
-}
-
-.just_text {
-    font-size: 18pt; /* Размер текста */
-    color: white; /* Цвет текста */
-    font-family: 'Rubik', sans-serif; /* Шрифт */
-}

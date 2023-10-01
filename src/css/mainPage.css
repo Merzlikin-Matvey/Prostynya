@@ -1,31 +1,22 @@
 body {
-    background-color: #202125; /* Цвет фона */
+  background-color: #1a1a1a; /* Цвет фона */
 }
-
-@font-face {
-    font-family: 'Futura';
-    src: local('Futura ExtraBold'), local('Futura-ExtraBold'),
-        url('../../fonts/FuturaLT-ExtraBold.woff2') format('woff2');
-    font-weight: 800;
-    font-style: normal;
-  }
 
 #title {
-    color: white;
-    font-size: 40pt;
-    font-family: 'Rubik'; /* Шрифт */
+  color: #e5e5e5; /* Цвет текста */
+  font-size: 74pt; /* Размер шрифта */
+  font-family: "Rubik"; /* Шрифт */
 }
 
-
 .button {
-    width: 420px; /* Ширина кнопки */
-    height: 70px; /* Высота кнопки */
-    background-color: transparent; /* Прозрачный фон */
-    border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
-    border-radius: 100px; /* Закругленные углы */
-    color: white; /* Белый цвет текста */
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    cursor: pointer; /* Курсор в виде указателя при наведении */
-    font-size: 24pt; /* Размер шрифта */
-    font-family: 'Rubik', sans-serif; /* Шрифт */
+  width: 420px; /* Ширина кнопки */
+  height: 70px; /* Высота кнопки */
+  background-color: transparent; /* Прозрачный фон */
+  border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
+  border-radius: 100px; /* Закругленные углы */
+  color: white; /* Белый цвет текста */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  cursor: pointer; /* Курсор в виде указателя при наведении */
+  font-size: 26pt; /* Размер шрифта */
+  font-family: "Rubik", sans-serif; /* Шрифт */
 }

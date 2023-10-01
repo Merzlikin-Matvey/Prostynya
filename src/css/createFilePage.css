@@ -1,50 +1,49 @@
+/* Скрываем стрелку вверх-вниз в полях ввода с типом number */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
-} /* Скрываем стрелку вверх-вниз */
+} /* Скрываем стрелку вверх-вниз в различных браузерах */
 
 input[type="number"] {
   -moz-appearance: textfield;
-} /* Скрываем стрелку вверх-вниз в FireFox*/
-
-
+} /* Скрываем стрелку вверх-вниз в Firefox */
 
 body {
-  background-color: #202125; /* Цвет фона */
+  background-color: #1A1A1A; /* Цвет фона */
 }
 
 #title {
-  color: white;
-  font-size: 40pt;
-  font-family: "Rubik", sans-serif; /* Шрифт */
+  color: #E5E5E5; /* Цвет текста */
+  font-size: 48pt; /* Размер шрифта */
+  font-family: 'Rubik'; /* Шрифт */
 }
 
+/* Параметры формы */
 #myForm {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 }
 
 .input {
-  width: 420px; /* Ширина кнопки */
-  height: 70px; /* Высота кнопки */
+  width: 410px; /* Ширина поля ввода */
+  height: 60px; /* Высота поля ввода */
   background-color: transparent; /* Прозрачный фон */
   border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
   border-radius: 100px; /* Закругленные углы */
   color: white; /* Белый цвет текста */
-  padding: 10px 20px; /* Отступы внутри кнопки */
+  padding: 10px 20px; /* Отступы внутри поля ввода */
   cursor: pointer; /* Курсор в виде указателя при наведении */
   font-size: 24pt; /* Размер шрифта */
   font-family: "Rubik", sans-serif; /* Шрифт */
   margin-bottom: 10px; /* Отступ снизу */
-  
 }
 
 .button {
-  width: 420px; /* Ширина кнопки */
-  height: 70px; /* Высота кнопки */
+  width: 450px; /* Ширина кнопки */
+  height: 80px; /* Высота кнопки */
   background-color: transparent; /* Прозрачный фон */
   border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
   border-radius: 100px; /* Закругленные углы */
@@ -52,7 +51,7 @@ body {
   padding: 10px 20px; /* Отступы внутри кнопки */
   cursor: pointer; /* Курсор в виде указателя при наведении */
   font-size: 24pt; /* Размер шрифта */
-  font-family: "Rubik", sans-serif; /* Шрифт */
+  font-family: "Rubik"; /* Шрифт */
 }
 
 /* Стили для наведения курсора на кнопку */
@@ -61,30 +60,20 @@ body {
   color: black; /* Черный цвет текста при наведении */
 }
 
-#generateButton {
-  text-align: center;
-  position: absolute;
-  top: 415px; 
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
 #download_form {
+  display: flex;
+  flex-direction: row;
   position: absolute;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.download_button {  
+#download_form .button {
+  margin-right: 10px; /* Добавить отступ справа к кнопке "Скачать задачи" */
+}
+
+/* Выравнивание текста в плейсхолдерах по центру */
+.input::placeholder {
   text-align: center;
-  position: absolute;
-  top: 415px; 
-  left: 0;
-  right: 0;
-  margin: 100px ;
 }
