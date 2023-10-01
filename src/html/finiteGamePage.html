@@ -26,7 +26,6 @@
       var urlParams = new URLSearchParams(window.location.search);
       var tasks = parseInt(urlParams.get("num"), 10);
       var size = parseInt(urlParams.get("size"), 10);
-      console.log(tasks);
 
       function whatToDo(event) {
         if (currentTask < tasks) {
@@ -40,9 +39,6 @@
       }
 
       function checkAnswers() {
-        console.log(myAnswers);
-        console.log(realAnswers);
-
         var result = 0;
         for (let i = 0; i < myAnswers.length; i++) {
           if (myAnswers[i] == realAnswers[i]) {
@@ -65,7 +61,6 @@
 
       function generateNewTask(event) {
         event.preventDefault();
-        console.log(currentTask);
 
         var xhr = new XMLHttpRequest();
 

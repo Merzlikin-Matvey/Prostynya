@@ -41,9 +41,10 @@ function createFile(
   const path = projectDirectory + '\\latex'
   const id = generateID()
 
-  if (!fileName){
-    fileName = generateID()
-  }
+  if (!num){ num = 70 }
+  if (!size){ size = 5 }
+  if (!title){ title = "Простыня" }
+  if (!fileName){ fileName = id }
 
   solutionName = fileName + '_solution'
 
@@ -64,13 +65,15 @@ function createFile(
   "\\begin{center} \n" +
   "   \\large{\\textit{" + title +"}} \n" +
   "\\end{center}" +
-  "\\begin{multicols}{2}\n"
+  "\\begin{multicols}{2}\n" + 
+  "\\begin{center} \n"
 
   let solutionContent = preamble +
   "\\begin{center} \n" +
   "   \\large{\\textit{" + title + " - ответы" + "}} \n" +
   "\\end{center}" +
-  "\\begin{multicols}{2}\n"
+  "\\begin{multicols}{2}\n" + 
+  "\\begin{center} \n"
 
 
    for (let i = 1; i < num + 1; i++){
@@ -85,9 +88,11 @@ function createFile(
       solution.toString() + "$ \\par \n" 
    }
 
+  taskContent += "\\end{center} \n"
   taskContent += "\\end{multicols} \n"
   taskContent += "\\end{document}"
 
+  solutionContent += "\\end{center} \n" 
   solutionContent += "\\end{multicols} \n"
   solutionContent += "\\end{document}"
 

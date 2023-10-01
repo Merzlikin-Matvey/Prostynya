@@ -41,7 +41,6 @@ app.post("/create_file", require("./createFileHandler").generateFile);
 app.post("/start_game", require("./gameHandler").redirectFiniteGame);
 
 app.post("/new_task", (req, res) => {
-  console.log(req.body);
   res.send(newTask(Number(req.body.size), "Addition"));
 });
 
@@ -52,10 +51,6 @@ app.get("/result", (req, res) => {
 });
 
 app.post("/download", require("./createFileHandler").downloadFile);
-
-app.post("/nothing", (req, res) => {
-  console.log(req.body);
-});
 
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
