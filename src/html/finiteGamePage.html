@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Пример обновления текста с помощью JavaScript</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <style>
-      .task {
-        text-align: center;
-        position: absolute;
-        top: -130px; /* Регулируйте это значение в зависимости от вашего дизайна */
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-      }
-    </style>
+    <title>Простыня</title>
+    <link rel="stylesheet" type="text/css" href="finiteGamePage.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%)">
       <p id="task" class="task" >1000-7</p>
 
       <form id="form" class="form">
-        <input type="text" class="form_item" id="answer" placeholder="Введите ответ" />
+        <input type="text" class="input" id="answer" placeholder="Введите ответ"  autocomplete="off"/>
       </form>
       <p class="just_text">Для ввода нажмите Enter</p>
     </div>

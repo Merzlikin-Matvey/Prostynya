@@ -3,7 +3,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="resultPage.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -13,6 +13,9 @@
   <title>Простыня</title>
 </head>
 <body>
+  <button id="backButton">
+    <img src="backButton.png" alt="Назад" />
+  </button>
   <div
     class="container"
     style="
@@ -31,5 +34,13 @@
     var result = urlParams.get("result");
     document.getElementById("title").textContent =
       "Ваш результат - " + result + " из " + tasks;
+  </script>
+
+  <script>
+    document
+      .getElementById("backButton")
+      .addEventListener("click", function () {
+        window.location.href = "finiteGameModePage";
+      });
   </script>
 </body>

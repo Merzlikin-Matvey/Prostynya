@@ -14,8 +14,10 @@ body {
   background-color: #1A1A1A; /* Цвет фона */
 }
 
+
+
 #title {
-  color: #E5E5E5; /* Цвет текста */
+  color: white; /* Цвет текста */
   font-size: 48pt; /* Размер шрифта */
   font-family: 'Rubik'; /* Шрифт */
 }
@@ -33,7 +35,7 @@ body {
   background-color: transparent; /* Прозрачный фон */
   border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
   border-radius: 100px; /* Закругленные углы */
-  color: white; /* Белый цвет текста */
+  color: #e5e5e5; /* Белый цвет текста */
   padding: 10px 20px; /* Отступы внутри поля ввода */
   cursor: pointer; /* Курсор в виде указателя при наведении */
   font-size: 24pt; /* Размер шрифта */
@@ -47,7 +49,7 @@ body {
   background-color: transparent; /* Прозрачный фон */
   border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
   border-radius: 100px; /* Закругленные углы */
-  color: white; /* Белый цвет текста */
+  color: #e5e5e5; /* Белый цвет текста */
   padding: 10px 20px; /* Отступы внутри кнопки */
   cursor: pointer; /* Курсор в виде указателя при наведении */
   font-size: 24pt; /* Размер шрифта */
@@ -77,3 +79,30 @@ body {
 .input::placeholder {
   text-align: center;
 }
+
+
+#backButton {
+  width: 0%; /* Измените этот процент на желаемый размер фотографии */
+  height: auto;
+  background-color: #1A1A1A; /* Цвет фона кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Убираем границу кнопки */
+  padding: 10px 20px; /* Внутренние отступы кнопки */
+  text-align: center; /* Выравниваем текст по центру */
+  text-decoration: none; /* Убираем подчеркивание у текста */
+  display: inline-block; /* Позволяет кнопке быть блочным элементом и настраивать ширину и высоту */
+  font-size: 16px; /* Размер шрифта текста кнопки */
+  cursor: pointer; /* Курсор в виде указателя при наведении на кнопку */
+  border-radius: 5px; /* Закругляем углы кнопки */
+}
+
+#backButton img {
+  width: 100px;
+  height: auto;
+}
+
+#backButton:hover {
+  background-color: #1A1A1A; /* Изменяем цвет фона кнопки при наведении */
+}
+
+

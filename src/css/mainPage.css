@@ -3,7 +3,7 @@ body {
 }
 
 #title {
-  color: #e5e5e5; /* Цвет текста */
+  color: white; /* Цвет текста */
   font-size: 74pt; /* Размер шрифта */
   font-family: "Rubik"; /* Шрифт */
 }
@@ -14,7 +14,7 @@ body {
   background-color: transparent; /* Прозрачный фон */
   border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
   border-radius: 100px; /* Закругленные углы */
-  color: white; /* Белый цвет текста */
+  color: #e5e5e5; /* Белый цвет текста */
   padding: 10px 20px; /* Отступы внутри кнопки */
   cursor: pointer; /* Курсор в виде указателя при наведении */
   font-size: 26pt; /* Размер шрифта */

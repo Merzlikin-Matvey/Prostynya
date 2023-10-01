@@ -1,60 +1,106 @@
+/* Скрываем стрелку вверх-вниз в полях ввода с типом number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+} /* Скрываем стрелку вверх-вниз в различных браузерах */
+
+input[type="number"] {
+  -moz-appearance: textfield;
+} /* Скрываем стрелку вверх-вниз в Firefox */
+
+
 /* Фон */
 body {
-    background-color: #1A1A1A; /* Цвет фона */
+  background-color: #1a1a1a; /* Цвет фона */
 }
 
-/* Стиль кнопки */
+
+#title {
+  color: white; /* Цвет текста */
+  font-size: 48pt; /* Размер шрифта */
+  font-family: 'Rubik'; /* Шрифт */
+}
+
+.input {
+  width: 410px; /* Ширина поля ввода */
+  height: 60px; /* Высота поля ввода */
+  background-color: transparent; /* Прозрачный фон */
+  border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
+  border-radius: 100px; /* Закругленные углы */
+  color: #e5e5e5; /* Белый цвет текста */
+  padding: 10px 20px; /* Отступы внутри поля ввода */
+  cursor: pointer; /* Курсор в виде указателя при наведении */
+  font-size: 24pt; /* Размер шрифта */
+  font-family: "Rubik"; /* Шрифт */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
 .button {
-    width: 420px; /* Ширина кнопки */
-    height: 70px; /* Высота кнопки */
-    background-color: transparent; /* Прозрачный фон */
-    border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
-    border-radius: 100px; /* Закругленные углы */
-    color: white; /* Белый цвет текста */
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    cursor: pointer; /* Курсор в виде указателя при наведении */
-    font-size: 24pt; /* Размер шрифта */
-    font-family: 'Rubik', sans-serif; /* Шрифт */
-    
+  width: 450px; /* Ширина кнопки */
+  height: 80px; /* Высота кнопки */
+  background-color: transparent; /* Прозрачный фон */
+  border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
+  border-radius: 100px; /* Закругленные углы */
+  color: #e5e5e5; /* Белый цвет текста */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  cursor: pointer; /* Курсор в виде указателя при наведении */
+  font-size: 24pt; /* Размер шрифта */
+  font-family: "Rubik"; /* Шрифт */
 }
 
 /* Стили для наведения курсора на кнопку */
 .button:hover {
-    background-color: white; /* Белый фон при наведении */
-    color: black; /* Черный цвет текста при наведении */
+  background-color: white; /* Белый фон при наведении */
+  color: black; /* Черный цвет текста при наведении */
 }
 
 /* Параметры формы */
 .form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
-.form_item {
-    width: 400px; /* Ширина кнопки */
-    height: 70px; /* Высота кнопки */
-    background-color: transparent; /* Прозрачный фон */
-    border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
-    border-radius: 100px; /* Закругленные углы */
-    color: white; /* Белый цвет текста */
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    cursor: pointer; /* Курсор в виде указателя при наведении */
-    font-size: 20pt; /* Размер шрифта */
-    font-family: 'Rubik', sans-serif; /* Шрифт */
-    margin-bottom: 10px; /* Отступ снизу */
-}
 
 .submit_button {
-    width: 400px; /* Ширина кнопки */
-    height: 70px; /* Высота кнопки */
-    background-color: transparent; /* Прозрачный фон */
-    border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
-    border-radius: 100px; /* Закругленные углы */
-    color: white; /* Белый цвет текста */
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    cursor: pointer; /* Курсор в виде указателя при наведении */
-    font-size: 20pt; /* Размер шрифта */
-    font-family: 'Rubik', sans-serif; /* Шрифт */
+  width: 400px; /* Ширина кнопки */
+  height: 70px; /* Высота кнопки */
+  background-color: transparent; /* Прозрачный фон */
+  border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
+  border-radius: 100px; /* Закругленные углы */
+  color: white; /* Белый цвет текста */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  cursor: pointer; /* Курсор в виде указателя при наведении */
+  font-size: 20pt; /* Размер шрифта */
+  font-family: "Rubik", sans-serif; /* Шрифт */
 }
 
+.input::placeholder {
+  text-align: center;
+}
+
+#backButton {
+  width: 0%; /* Измените этот процент на желаемый размер фотографии */
+  height: auto;
+  background-color: #1a1a1a; /* Цвет фона кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Убираем границу кнопки */
+  padding: 10px 20px; /* Внутренние отступы кнопки */
+  text-align: center; /* Выравниваем текст по центру */
+  text-decoration: none; /* Убираем подчеркивание у текста */
+  display: inline-block; /* Позволяет кнопке быть блочным элементом и настраивать ширину и высоту */
+  font-size: 16px; /* Размер шрифта текста кнопки */
+  cursor: pointer; /* Курсор в виде указателя при наведении на кнопку */
+  border-radius: 5px; /* Закругляем углы кнопки */
+}
+
+#backButton img {
+  width: 100px;
+  height: auto;
+}
+
+#backButton:hover {
+  background-color: #1a1a1a; /* Изменяем цвет фона кнопки при наведении */
+}

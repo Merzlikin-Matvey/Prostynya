@@ -12,6 +12,9 @@
     <title>Простыня</title>
   </head>
   <body>
+    <button id="backButton">
+      <img src="backButton.png" alt="Назад" />
+    </button>
     <div
       class="container"
       style="
@@ -39,6 +42,7 @@
           type="number"
           name="num"
           placeholder="Количество задач"
+          autocomplete="off"
         />
         <input
           id="size"
@@ -46,6 +50,7 @@
           type="number"
           name="size"
           placeholder="Длина чисел"
+          autocomplete="off"
         />
         <input
           id="fileTitle"
@@ -53,6 +58,7 @@
           type="text"
           name="fileTitle"
           placeholder="Заголовок"
+          autocomplete="off"
         />
 
         <input
@@ -61,13 +67,13 @@
           type="text"
           name="fileName"
           placeholder="Имя файла"
+          autocomplete="off"
         />
       </form>
       <button class="button" type="submit" id="generateButton" , form="myForm">
         Сгенерировать
       </button>
     </div>
-    
 
     <div class="container" id="download_form">
       <form method="post" action="/download" id="downloadTaskForm">
@@ -175,6 +181,14 @@
       document
         .getElementById("myForm")
         .addEventListener("submit", generateFiles);
+    </script>
+
+    <script>
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          history.back();
+        });
     </script>
   </body>
 </html>

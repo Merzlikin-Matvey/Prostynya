@@ -5,40 +5,67 @@
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
     <link rel="stylesheet" type="text/css" href="finiteGameModePage.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Простыня</title>
   </head>
   <body>
+    <button id="backButton">
+      <img src="backButton.png" alt="Назад" />
+    </button>
     <div
       class="container"
       style="
         position: absolute;
-        top: 40%;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <p id="title" class="title">Параметры игры</p>
+    </div>
+    <div
+      class="container"
+      style="
+        position: absolute;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
       "
     >
       <form class="form" method="post" action="/start_game">
         <input
-          class="form_item"
+          class="input"
           type="number"
           name="num"
           placeholder="Количество задач"
+          autocomplete="off"
         />
         <input
-          class="form_item"
+          class="input"
           type="number"
           name="size"
           placeholder="Длина чисел"
+          autocomplete="off"
         />
         <button
           class="button"
           type="submit"
-          id="downloadSolutionButton"
+          id="startGameButton"
+          autocomplete="off"
         >
-          Скачать ответы
+          Начать игру
         </button>
       </form>
     </div>
   </body>
+  <script>
+    document
+      .getElementById("backButton")
+      .addEventListener("click", function () {
+        location.replace("/");
+      });
+  </script>
 </html>
