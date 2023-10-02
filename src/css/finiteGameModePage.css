@@ -81,26 +81,3 @@ body {
   text-align: center;
 }
 
-#backButton {
-  width: 0%; /* Измените этот процент на желаемый размер фотографии */
-  height: auto;
-  background-color: #1a1a1a; /* Цвет фона кнопки */
-  color: white; /* Цвет текста кнопки */
-  border: none; /* Убираем границу кнопки */
-  padding: 10px 20px; /* Внутренние отступы кнопки */
-  text-align: center; /* Выравниваем текст по центру */
-  text-decoration: none; /* Убираем подчеркивание у текста */
-  display: inline-block; /* Позволяет кнопке быть блочным элементом и настраивать ширину и высоту */
-  font-size: 16px; /* Размер шрифта текста кнопки */
-  cursor: pointer; /* Курсор в виде указателя при наведении на кнопку */
-  border-radius: 5px; /* Закругляем углы кнопки */
-}
-
-#backButton img {
-  width: 100px;
-  height: auto;
-}
-
-#backButton:hover {
-  background-color: #1a1a1a; /* Изменяем цвет фона кнопки при наведении */
-}

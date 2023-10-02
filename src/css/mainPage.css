@@ -1,16 +1,17 @@
 body {
   background-color: #1a1a1a; /* Цвет фона */
+  font-family: "Rubik", sans-serif; /* Шрифт */
 }
 
 #title {
   color: white; /* Цвет текста */
   font-size: 74pt; /* Размер шрифта */
-  font-family: "Rubik"; /* Шрифт */
 }
 
 .button {
-  width: 420px; /* Ширина кнопки */
-  height: 70px; /* Высота кнопки */
+  width: 100%; /* Ширина кнопки занимает 100% ширины родительского элемента */
+  max-width: 410px; /* Максимальная ширина кнопки */
+  height: 67px; /* Высота кнопки */
   background-color: transparent; /* Прозрачный фон */
   border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
   border-radius: 100px; /* Закругленные углы */
@@ -18,5 +19,43 @@ body {
   padding: 10px 20px; /* Отступы внутри кнопки */
   cursor: pointer; /* Курсор в виде указателя при наведении */
   font-size: 26pt; /* Размер шрифта */
-  font-family: "Rubik", sans-serif; /* Шрифт */
+  margin-right: 6px; /*Отступ справа */
+  margin-left: 6px; /*Отступ слева */
+  margin-top: 6px; /*Отступ справа */
+  margin-bottom: 6px; /*Отступ слева */
+}
+
+.container {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (orientation: portrait){
+  #title {
+    font-size: 46pt; /* Размер шрифта */
+  }
+  .button {
+    max-width: 300px; /* Максимальная ширина кнопки */
+    height: 50px; /* Высота кнопки */
+    padding: 5px 10px; /* Отступы внутри кнопки */
+    font-size: 20pt; /* Размер шрифта */
+  }
+
+  .container {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 }

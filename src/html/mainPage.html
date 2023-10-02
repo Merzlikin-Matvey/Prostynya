@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="mainPage.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap" rel="stylesheet">
-        <title>Простыня</title>
-    </head>
-    <body>
-        <div class="container" style="position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%)">
-            <p id="title" class="title">Простыня</p>
-        </div>
-        <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <button id="createFileButton" class="button">Создать лист</button>
-            <button id="gameModeButton" class="button">Игровой режим</button>
-        <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="mainPage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Простыня</title>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="
+        position: absolute;
+        top: 38vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <p id="title" class="title">Простыня</p>
+    </div>
+    <div class="container">
+      <button id="createFileButton" class="button">Создать лист</button>
+      <button id="gameModeButton" class="button">Игровой режим</button>
+    </div>
+  </body>
+  <script>
+    var createFileButton = document.getElementById("createFileButton");
+    var gameModeButton = document.getElementById("gameModeButton");
 
-    </body>
-    <script>
-        var createFileButton = document.getElementById("createFileButton");
-        var gameModeButton = document.getElementById("gameModeButton");
-
-        createFileButton.addEventListener("click", function() {
-            window.location.href = "createFilePage";
-        });
-        gameModeButton.addEventListener("click", function() {
-            window.location.href = "finiteGameModePage";
-        });
-
-    </script>
+    createFileButton.addEventListener("click", function () {
+      window.location.href = "createFilePage";
+    });
+    gameModeButton.addEventListener("click", function () {
+      window.location.href = "finiteGameModePage";
+    });
+  </script>
 </html>

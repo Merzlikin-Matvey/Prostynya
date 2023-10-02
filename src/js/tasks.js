@@ -90,8 +90,6 @@ function createFile(
       "\\,".repeat(1 + 2*(Math.floor(Math.log10(num + 1)) - Math.floor(Math.log10(i)))) +
       solution.toString() + "\\,".repeat(2*(size + 1 - 
         Math.floor(Math.log10(solution)) - 1))  + "$ \\par \n" 
-        console.log(size + 1 - 
-          Math.floor(Math.log10(solution)))
    }
 
   taskContent += "\\end{center} \n"
@@ -120,7 +118,7 @@ function createFile(
 
 module.exports = { createFile, generateSingleTask, generateID };
 
-createFile()
+
 
 
 
