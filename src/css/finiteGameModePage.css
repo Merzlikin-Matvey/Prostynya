@@ -19,6 +19,7 @@ body {
   color: white; /* Цвет текста */
   font-size: 48pt; /* Размер шрифта */
   font-family: "Rubik"; /* Шрифт */
+  text-align: center; /* Центрирование */
 }
 
 .input {
@@ -37,7 +38,7 @@ body {
 
 .button {
   width: 450px; /* Ширина кнопки */
-  height: 80px; /* Высота кнопки */
+  height: 79px; /* Высота кнопки */
   background-color: transparent; /* Прозрачный фон */
   border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
   border-radius: 100px; /* Закругленные углы */
@@ -61,19 +62,31 @@ body {
   margin-bottom: 10px;
 }
 
-.submit_button {
-  width: 400px; /* Ширина кнопки */
-  height: 70px; /* Высота кнопки */
-  background-color: transparent; /* Прозрачный фон */
-  border: 2px solid rgb(104, 104, 104); /* Серая окантовка */
-  border-radius: 100px; /* Закругленные углы */
-  color: white; /* Белый цвет текста */
-  padding: 10px 20px; /* Отступы внутри кнопки */
-  cursor: pointer; /* Курсор в виде указателя при наведении */
-  font-size: 20pt; /* Размер шрифта */
-  font-family: "Rubik", sans-serif; /* Шрифт */
-}
-
 .input::placeholder {
   text-align: center;
+}
+
+.container1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (orientation: portrait) {
+  #title {
+    text-align: center; /* Центрирование */
+  }
+  .input {
+    width: 350px; /* Ширина кнопки */
+    height: 54px; /* Высота кнопки */
+  }
+  .button {
+    width: 392px; /* Ширина кнопки */
+    height: 72px; /* Высота кнопки */
+  }
+
+  .container1 {
+    top: 30%;
+  }
 }

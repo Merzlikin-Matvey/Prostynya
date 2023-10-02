@@ -18,6 +18,7 @@ body {
   color: white; /* Цвет текста */
   font-size: 48pt; /* Размер шрифта */
   font-family: "Rubik"; /* Шрифт */
+  text-align: center; /* Центрирование */
 }
 
 /* Параметры формы */
@@ -76,4 +77,32 @@ body {
 /* Выравнивание текста в плейсхолдерах по центру */
 .input::placeholder {
   text-align: center;
+}
+
+.container1 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (orientation: portrait) {
+  #title {
+    font-size: 38pt; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+  }
+
+  .input {
+    width: 350px; /* Ширина кнопки */
+    height: 54px; /* Высота кнопки */
+  }
+
+  .button {
+    width: 392px; /* Ширина кнопки */
+    height: 72px; /* Высота кнопки */
+  }
+
+  .container1 {
+    top: 12.5%;
+  }
 }
