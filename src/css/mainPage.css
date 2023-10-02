@@ -34,7 +34,7 @@ body {
   width: 100%;
 }
 
-@media screen and (orientation: portrait){
+@media screen and (orientation: portrait) {
   #title {
     font-size: 46pt; /* Размер шрифта */
   }
@@ -55,7 +55,5 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-
+  }
 }

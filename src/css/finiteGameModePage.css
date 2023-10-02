@@ -10,17 +10,15 @@ input[type="number"] {
   -moz-appearance: textfield;
 } /* Скрываем стрелку вверх-вниз в Firefox */
 
-
 /* Фон */
 body {
   background-color: #1a1a1a; /* Цвет фона */
 }
 
-
 #title {
   color: white; /* Цвет текста */
   font-size: 48pt; /* Размер шрифта */
-  font-family: 'Rubik'; /* Шрифт */
+  font-family: "Rubik"; /* Шрифт */
 }
 
 .input {
@@ -63,7 +61,6 @@ body {
   margin-bottom: 10px;
 }
 
-
 .submit_button {
   width: 400px; /* Ширина кнопки */
   height: 70px; /* Высота кнопки */
@@ -80,4 +77,3 @@ body {
 .input::placeholder {
   text-align: center;
 }
-

@@ -11,15 +11,13 @@ input[type="number"] {
 } /* Скрываем стрелку вверх-вниз в Firefox */
 
 body {
-  background-color: #1A1A1A; /* Цвет фона */
+  background-color: #1a1a1a; /* Цвет фона */
 }
-
-
 
 #title {
   color: white; /* Цвет текста */
   font-size: 48pt; /* Размер шрифта */
-  font-family: 'Rubik'; /* Шрифт */
+  font-family: "Rubik"; /* Шрифт */
 }
 
 /* Параметры формы */
@@ -79,6 +77,3 @@ body {
 .input::placeholder {
   text-align: center;
 }
-
-
-

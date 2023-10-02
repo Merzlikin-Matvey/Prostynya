@@ -32,10 +32,7 @@ const generateFile = (req, res) => {
 const downloadFile = (req, res) => {
   let filePath = req.body.filePath;
   let fileName = getFileName(filePath);
-  res.setHeader(
-    "Content-Disposition",
-    `attachment; filename="${fileName}"`
-  );
+  res.setHeader("Content-Disposition", `attachment; filename="${fileName}"`);
   res.sendFile(filePath);
 };
 

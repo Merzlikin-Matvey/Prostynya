@@ -1,10 +1,9 @@
 body {
-    background-color: #1a1a1a; /* Цвет фона */
-  }
-
-#title {
-    color: white; /* Цвет текста */
-    font-family: Rubik; /* Шрифт */
-    font-size: 60px; /* Размер шрифта */
+  background-color: #1a1a1a; /* Цвет фона */
 }
 
+#title {
+  color: white; /* Цвет текста */
+  font-family: Rubik; /* Шрифт */
+  font-size: 60px; /* Размер шрифта */
+}
