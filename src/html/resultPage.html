@@ -25,9 +25,11 @@
     var urlParams = new URLSearchParams(window.location.search);
     var tasks = urlParams.get("num");
     var result = urlParams.get("result");
-    document.getElementById("title").textContent =
-      "Ваш результат - " + result + " из " + tasks;
+    document.getElementById("title").innerHTML =
+      "Ваш результат" + "<br>" + result + " из " + tasks;
   </script>
+
+
 
   <script>
     document

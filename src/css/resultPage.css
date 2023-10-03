@@ -4,8 +4,9 @@ body {
 
 #title {
   color: white; /* Цвет текста */
-  font-size: 74pt; /* Размер шрифта */
+  font-size: 56pt; /* Размер шрифта */
   font-family: "Rubik";
+  text-align: center;
   position: absolute;
   top: 28vh;
   left: 50vw;
