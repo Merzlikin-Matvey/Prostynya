@@ -65,13 +65,13 @@ body {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 80%;
-  left: 50%;
+  top: 80vh;
+  left: 50vw;
   transform: translate(-50%, -50%);
 }
 
 #download_form .button {
-  margin-right: 10px; /* Добавить отступ справа к кнопке "Скачать задачи" */
+  margin-right: 10px;
 }
 
 /* Выравнивание текста в плейсхолдерах по центру */
@@ -86,23 +86,184 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (orientation: portrait) {
+#divForm {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@media screen and (orientation: portrait) and (max-height: 700px) {
   #title {
-    font-size: 32pt; /* Размер шрифта */
+    font-size: 28pt; /* Размер шрифта */
     text-align: center; /* Центрирование */
   }
 
-  .input {
-    width: 320px; /* Ширина кнопки */
-    height: 46px; /* Высота кнопки */
-  }
-
   .button {
-    width: 363px; /* Ширина кнопки */
-    height: 65px; /* Высота кнопки */
+    width: 275px; /* Ширина кнопки */
+    height: 53px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+  .input {
+    width: 232px; /* Ширина кнопки */
+    height: 32px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
   }
 
   .container1 {
-    top: 14%;
+    top: 12%;
+  }
+
+  #divForm {
+    position: absolute;
+    top: 53vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #download_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+  #download_form .button {
+    margin-bottom: 10px;
+    margin-right: 0;
   }
 }
+
+@media screen and (orientation: portrait) and (min-height: 700px) and (max-height: 790px) {
+  #title {
+    font-size: 26pt; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+  }
+
+  .button {
+    width: 295px; /* Ширина кнопки */
+    height: 54px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+  .input {
+    width: 246px; /* Ширина кнопки */
+    height: 37px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+
+  .container1 {
+    top: 12%;
+  }
+
+  #divForm {
+    position: absolute;
+    top: 46vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #download_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 83vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+  #download_form .button {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+
+
+@media screen and (orientation: portrait) and (min-height: 791px) and (max-height: 950px) {
+  #title {
+    font-size: 24pt; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+  }
+
+  .button {
+    width: 295px; /* Ширина кнопки */
+    height: 54px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+  .input {
+    width: 246px; /* Ширина кнопки */
+    height: 37px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+
+  .container1 {
+    top: 12%;
+  }
+
+  #divForm {
+    position: absolute;
+    top: 35vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #download_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 66vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+  #download_form .button {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-height: 951px) and (max-height: 1200px) {
+  #title {
+    font-size: 35pt; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+  }
+
+  .button {
+    width: 400px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+  .input {
+    width: 365px; /* Ширина кнопки */
+    height: 52px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+
+  .container1 {
+    top: 12%;
+  }
+
+  #divForm {
+    position: absolute;
+    top: 35vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #download_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 66vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+  #download_form .button {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+
+
+

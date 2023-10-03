@@ -4,8 +4,35 @@ body {
 
 #title {
   color: white; /* Цвет текста */
-  font-family: Rubik; /* Шрифт */
-  font-size: 60px; /* Размер шрифта */
+  font-size: 74pt; /* Размер шрифта */
+  font-family: "Rubik";
+  position: absolute;
+  top: 28vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
 }
+
+@media screen and (orientation: portrait) and (max-height: 700px) {
+  #title {
+    font-size: 32pt; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+  }
+}
+
+@media screen and (orientation: portrait) and (max-height: 950px) {
+  #title {
+    font-size: 30pt; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+  }
+}
+
+@media screen and (orientation: portrait) and (min-aspect-ratio: 0.65/1) {
+  #title {
+    font-size: 27pt; /* Размер шрифта */
+  }
+
+}
+
+
 
 
