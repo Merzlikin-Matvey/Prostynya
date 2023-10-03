@@ -18,8 +18,13 @@ body {
 #title {
   color: white; /* Цвет текста */
   font-size: 48pt; /* Размер шрифта */
-  font-family: "Rubik"; /* Шрифт */
+  font-family: "Rubik", serif; /* Шрифт */
   text-align: center; /* Центрирование */
+  position: absolute;
+  top: 20vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+
 }
 
 .input {
@@ -73,20 +78,149 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (orientation: portrait) {
+#divForm {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+@media screen and (orientation: portrait) and (max-height: 700px) {
   #title {
+    font-size: 28pt; /* Размер шрифта */
     text-align: center; /* Центрирование */
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+
+  .button {
+    width: 275px; /* Ширина кнопки */
+    height: 53px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
   }
   .input {
-    width: 350px; /* Ширина кнопки */
-    height: 54px; /* Высота кнопки */
-  }
-  .button {
-    width: 392px; /* Ширина кнопки */
-    height: 72px; /* Высота кнопки */
+    width: 232px; /* Ширина кнопки */
+    height: 32px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
   }
 
   .container1 {
-    top: 30%;
+    top: 12%;
+  }
+
+  #divForm {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #download_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+  #download_form .button {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-height: 701px) and (max-height: 779px){
+  #title {
+    font-size: 45px; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+
+  .button {
+    width: 295px; /* Ширина кнопки */
+    height: 54px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+  .input {
+    width: 252px; /* Ширина кнопки */
+    height: 37px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+
+  .container1 {
+    top: 12%;
+  }
+
+  #divForm {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #download_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+  #download_form .button {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-height: 780px) and (max-height: 970px){
+  #title {
+    font-size: 45px; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+
+  .button {
+    width: 295px; /* Ширина кнопки */
+    height: 54px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+  .input {
+    width: 252px; /* Ширина кнопки */
+    height: 37px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+
+  .container1 {
+    top: 12%;
+  }
+
+  #divForm {
+    position: absolute;
+    top: 45vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #download_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+  #download_form .button {
+    margin-bottom: 10px;
+    margin-right: 0;
   }
 }

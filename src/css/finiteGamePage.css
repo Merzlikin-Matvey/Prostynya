@@ -15,15 +15,15 @@ body {
 }
 
 .input {
-  width: 410px; /* Ширина поля ввода */
-  height: 60px; /* Высота поля ввода */
+  width: 80vw; /* Ширина поля ввода */
+  height: 72px; /* Высота поля ввода */
   background-color: transparent; /* Прозрачный фон */
   border: 3px solid white; /* Серая окантовка */
   border-radius: 100px; /* Закругленные углы */
   color: #e5e5e5; /* Белый цвет текста */
   padding: 10px 20px; /* Отступы внутри поля ввода */
   cursor: pointer; /* Курсор в виде указателя при наведении */
-  font-size: 24pt; /* Размер шрифта */
+  font-size: 30pt; /* Размер шрифта */
   font-family: "Rubik", sans-serif; /* Шрифт */
   margin-bottom: 10px; /* Отступ снизу */
 }
@@ -51,3 +51,8 @@ body {
   font-size: 20pt; /* Размер шрифта */
   color: #e5e5e5; /* Цвет текста */
 }
+/* Выравнивание текста в плейсхолдерах по центру */
+.input::placeholder {
+  text-align: center
+}
+
