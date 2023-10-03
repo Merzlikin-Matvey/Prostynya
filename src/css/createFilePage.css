@@ -88,21 +88,21 @@ body {
 
 @media screen and (orientation: portrait) {
   #title {
-    font-size: 38pt; /* Размер шрифта */
+    font-size: 32pt; /* Размер шрифта */
     text-align: center; /* Центрирование */
   }
 
   .input {
-    width: 350px; /* Ширина кнопки */
-    height: 54px; /* Высота кнопки */
+    width: 320px; /* Ширина кнопки */
+    height: 46px; /* Высота кнопки */
   }
 
   .button {
-    width: 392px; /* Ширина кнопки */
-    height: 72px; /* Высота кнопки */
+    width: 363px; /* Ширина кнопки */
+    height: 65px; /* Высота кнопки */
   }
 
   .container1 {
-    top: 12.5%;
+    top: 14%;
   }
 }
