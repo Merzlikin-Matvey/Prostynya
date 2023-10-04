@@ -22,7 +22,7 @@
         <input
           id="num"
           class="input"
-          type="number"
+          type="text"
           name="num"
           placeholder="Количество задач"
           autocomplete="off"
@@ -30,7 +30,7 @@
         <input
           id="size"
           class="input"
-          type="number"
+          type="text"
           name="size"
           placeholder="Длина чисел"
           autocomplete="off"
@@ -149,28 +149,139 @@
           }
         };
 
-        var data =
-          "num=" +
-          encodeURIComponent(num) +
-          "&size=" +
-          encodeURIComponent(size) +
-          "&fileTitle=" +
-          encodeURIComponent(fileTitle) +
-          "&fileName=" +
-          encodeURIComponent(fileName);
-        xhr.send(data);
+        if (checkArguments(num, size, fileTitle, fileName)) {
+          var data =
+            "num=" +
+            encodeURIComponent(num) +
+            "&size=" +
+            encodeURIComponent(size) +
+            "&fileTitle=" +
+            encodeURIComponent(fileTitle) +
+            "&fileName=" +
+            encodeURIComponent(fileName);
+          xhr.send(data);
+        }
+
       }
       document
         .getElementById("myForm")
         .addEventListener("submit", generateFiles);
-    </script>
 
-    <script>
+      function checkArguments(num, size, fileTitle, fileName){
+        let okay = true
+        try{ 
+          num = Number(num)
+          if (isNaN(num)){
+            okay = false;
+            setError('num');
+          }
+          if (num > 9999 || num < 0){
+            okay = false;
+            setError('num');
+          }
+        }
+        catch{ 
+          if (typeof(num) == "string"){
+            if (num != " "){
+              okay = false;
+              setError(num)
+            }
+          }
+        }
+
+        try{ 
+          size = Number(size)
+          if (isNaN(size)){
+            okay = false;
+            setError('size');
+          }
+          if (size > 8 || num < 0){
+            okay = false;
+            setError('size');
+          }
+        }
+        catch{ 
+          if (typeof(size) == "string"){
+            if (size != " "){
+              okay = false;
+              setError(size)
+            }
+          }
+        }
+
+        if (fileTitle.length > 20){
+          okay = false;
+          setError(fileTitle);
+        }
+
+        niceSymbols = [
+          'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', z, 
+          A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+          "-"
+        ]
+
+        for (i = 0; i < fileName.length; i++){
+          if (!(fileName[i] in niceSymbols)){
+            console.log("JJJJ")
+          }
+        }
+
+        return okay;
+      }
+
+      function setError(id){
+        document.getElementById(id).value = "ЛАЖА";
+        document.getElementById(id).style.color = "#CE2029"
+      }
+
       document
         .getElementById("backButton")
         .addEventListener("click", function () {
           history.back();
         });
+
+      // Убираем, если ЛАЖА
+      num = document.getElementById("num");
+      size = document.getElementById("size");
+      fileTitle = document.getElementById("fileTitle");
+      fileName = document.getElementById("fileName");
+
+      num.addEventListener("click", isErrorNum);
+      size.addEventListener("click", isErrorSize);
+      fileTitle.addEventListener("click", isErrorFileTitle);
+      fileName.addEventListener("click", isErrorFileName);
+
+      function isErrorNum(){
+        if (num.value == "ЛАЖА"){
+            num.value = ""
+            num.style.color = "#e5e5e5"
+        }
+      }
+
+      function isErrorSize(){
+        if (size.value == "ЛАЖА"){
+            size.value = ""
+            size.style.color = "#e5e5e5"
+        }
+      }
+
+      function isErrorFileTitle(){
+        if (fileTitle.value == "ЛАЖА"){
+            fileTitle.value = ""
+            fileTitle.style.color = "#e5e5e5"
+        }
+      }
+
+      function isErrorFileName(){
+        if (fileName.value == "ЛАЖА"){
+            fileName.value = ""
+            fileName.style.color = "#e5e5e5"
+        }
+      }
+    </script>
+
+    <script>
+      
     </script>
   </body>
 </html>

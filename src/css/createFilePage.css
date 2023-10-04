@@ -40,6 +40,7 @@ body {
   font-size: 24pt; /* Размер шрифта */
   font-family: "Rubik", sans-serif; /* Шрифт */
   margin-bottom: 10px; /* Отступ снизу */
+  text-align: center;
 }
 
 .button {

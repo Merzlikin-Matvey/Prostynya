@@ -17,7 +17,7 @@ const redirectFiniteGame = (req, res) => {
     num = 5;
   }
 
-  console.log(num, size)
+
   res.redirect(
     "/finiteGamePage" + "?size=" + size + "&num=" + num
   );
