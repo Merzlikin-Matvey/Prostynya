@@ -136,6 +136,30 @@ body {
   }
 }
 
+@media screen and (orientation: landscape) and (min-aspect-ratio: 17/9){
+  #title {
+    font-size: 74pt; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+  }
+
+  .button {
+    width: 420px; /* Ширина кнопки */
+    height: 69px; /* Высота кнопки */
+    font-size: 26pt; /* Размер шрифта */
+  }
+
+  .container {
+    position: absolute;
+    top: 53vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  
+}
+
 
 
 

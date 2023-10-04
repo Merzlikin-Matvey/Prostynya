@@ -224,3 +224,50 @@ body {
     margin-right: 0;
   }
 }
+
+@media screen and (orientation: landscape) and (min-aspect-ratio: 17/9){
+  #title {
+    font-size: 35pt; /* Размер шрифта */
+    text-align: center; /* Центрирование */
+  }
+
+  .button {
+    width: 400px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+  .input {
+    width: 365px; /* Ширина кнопки */
+    height: 52px; /* Высота кнопки */
+    font-size: 19pt; /* Размер шрифта */
+  }
+
+  .container1 {
+    top: 12%;
+  }
+
+  #divForm {
+    position: absolute;
+    top: 48vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #download_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 66vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+  #download_form .button {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+  
+}
+
+
+
+

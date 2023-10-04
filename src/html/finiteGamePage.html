@@ -9,6 +9,7 @@
     />
   </head>
   <body>
+    <p id="stats" class="text">000000000000000</p>
     <div class="container" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%)">
       <p id="task" class="task" >1000-7</p>
 
@@ -31,11 +32,16 @@
         if (currentTask < tasks) {
           generateNewTask(event);
           getNewAnswer();
+          updateStats(currentTask, tasks);
         } else if (currentTask == tasks) {
           getNewAnswer();
           checkAnswers();
         }
         currentTask += 1;
+      }
+
+      function updateStats(currentTask, tasks){
+        document.getElementById("stats").textContent = currentTask+1 + '/' + tasks
       }
 
       function checkAnswers() {

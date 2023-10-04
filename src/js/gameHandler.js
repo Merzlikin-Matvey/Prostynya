@@ -1,8 +1,25 @@
 const { generateSingleTask } = require("./tasks");
 
 const redirectFiniteGame = (req, res) => {
+  size = req.body.size;
+  num = req.body.num;
+  try{
+    size = Number(size);
+  }
+  finally {
+    size = 3;
+  }
+
+  try{
+    num = Number(num);
+  }
+  finally {
+    num = 5;
+  }
+
+  console.log(num, size)
   res.redirect(
-    "/finiteGamePage" + "?size=" + req.body.size + "&num=" + req.body.num
+    "/finiteGamePage" + "?size=" + size + "&num=" + num
   );
 };
 

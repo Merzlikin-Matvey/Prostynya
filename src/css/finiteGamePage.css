@@ -56,3 +56,11 @@ body {
   text-align: center
 }
 
+#stats {
+  color: #e5e5e5;
+  margin-top: 3vh;
+  margin-left: 2.5vw;
+  font-size: 30px; 
+  font-family: Rubik;
+}
+
