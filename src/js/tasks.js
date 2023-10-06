@@ -14,6 +14,9 @@ function getRandomNumber(size = 3) {
 function generateSingleTask(size = 3, operation = "Addition") {
   let a = getRandomNumber(size);
   let b = getRandomNumber(size);
+  if (size > 15){
+    return 0;
+  }
   if (operation == "Addition") {
     return [a.toString() + "+" + b.toString(), a + b];
   } else if (operation == "Multiplication") {
@@ -56,6 +59,10 @@ function createFile(
   }
   if (!fileName) {
     fileName = id;
+  }
+
+  if (num > 20000 || size > 10){
+    return 0;
   }
 
   solutionName = fileName + "_solution";

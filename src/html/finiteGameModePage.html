@@ -50,8 +50,12 @@
     })
     
     function startGame(){
-      const num = document.getElementById("num").value; 
-      const size = document.getElementById("size").value; 
+      let num = document.getElementById("num").value; 
+      let size = document.getElementById("size").value; 
+      
+      if (num == ''){ num = 5 }
+      if (size == ''){ size = 3 }
+
       if (checkArguments(num, size)){
         window.location.href = '/finiteGamePage?num=' + num + '&size=' + size;
       }
@@ -64,18 +68,14 @@
           okay = false;
           setError('num');
         }
-        if (num > 9999 || num < 0) {
+        else if (num > 9999 || num < 0) {
           okay = false;
           setError('num');
         }
       }
       catch {
-        if (typeof (num) == "string") {
-          if (num != " ") {
-            okay = false;
-            setError(num)
-          }
-        }
+        okay = false;
+        setError('size');
       }
 
       try {
@@ -90,12 +90,8 @@
         }
       }
       catch {
-        if (typeof (size) == "string") {
-          if (size != " ") {
-            okay = false;
-            setError(size)
-          }
-        }
+        okay = false;
+        setError('size');
       }
 
       return okay
