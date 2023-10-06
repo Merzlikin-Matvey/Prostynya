@@ -18,37 +18,119 @@
     </button>
     <p id="title" class="title">Параметры игры</p>
     <div id="divForm">
-      <form class="form" method="post" action="/start_game">
+      <form class="form">
         <input
           class="input"
-          type="number"
-          name="num"
+          type="text"
+          id="num"
           placeholder="Количество задач"
           autocomplete="off"
         />
         <input
           class="input"
-          type="number"
-          name="size"
+          type="text"
+          id="size"
           placeholder="Длина чисел"
           autocomplete="off"
         />
-        <button
+      </form>
+      <button
           class="button"
-          type="submit"
           id="startGameButton"
           autocomplete="off"
         >
           Начать игру
         </button>
-      </form>
     </div>
   </body>
   <script>
+    document.getElementById("startGameButton")
+    .addEventListener('click', function (){
+      startGame()
+    })
+    
+    function startGame(){
+      const num = document.getElementById("num").value; 
+      const size = document.getElementById("size").value; 
+      if (checkArguments(num, size)){
+        window.location.href = '/finiteGamePage?num=' + num + '&size=' + size;
+      }
+    }
+    function checkArguments(num, size) {
+      let okay = true
+      try {
+        num = Number(num)
+        if (isNaN(num)) {
+          okay = false;
+          setError('num');
+        }
+        if (num > 9999 || num < 0) {
+          okay = false;
+          setError('num');
+        }
+      }
+      catch {
+        if (typeof (num) == "string") {
+          if (num != " ") {
+            okay = false;
+            setError(num)
+          }
+        }
+      }
+
+      try {
+        size = Number(size)
+        if (isNaN(size)) {
+          okay = false;
+          setError('size');
+        }
+        if (size > 8 || num < 0) {
+          okay = false;
+          setError('size');
+        }
+      }
+      catch {
+        if (typeof (size) == "string") {
+          if (size != " ") {
+            okay = false;
+            setError(size)
+          }
+        }
+      }
+
+      return okay
+    }
+    
+    function setError(id) {
+        document.getElementById(id).value = "ЛАЖА";
+        document.getElementById(id).style.color = "#CE2029"
+    }
+
+    // Убираем, если ЛАЖА
+    num = document.getElementById("num");
+    size = document.getElementById("size");
+
+    num.addEventListener("click", isErrorNum);
+    size.addEventListener("click", isErrorSize);
+
+    function isErrorNum() {
+      if (num.value == "ЛАЖА") {
+        num.value = ""
+        num.style.color = "#e5e5e5"
+      }
+    }
+
+    function isErrorSize() {
+      if (size.value == "ЛАЖА") {
+        size.value = ""
+        size.style.color = "#e5e5e5"
+      }
+    }
+
     document
-      .getElementById("backButton")
-      .addEventListener("click", function () {
-        location.replace("/");
-      });
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          window.location.href = '/';
+        });
   </script>
 </html>
