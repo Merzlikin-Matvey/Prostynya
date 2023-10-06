@@ -195,7 +195,7 @@
             okay = false;
             setError('size');
           }
-          if (size > 8 || num < 0){
+          if (size > 8 || size < 0){
             okay = false;
             setError('size');
           }
@@ -215,21 +215,22 @@
         }
 
         niceSymbols = [
-          'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', z, 
-          A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
-          "-"
+          'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+          'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 
+          '-', '_', '(', ')'
         ]
-
+        console.log(fileName.length)
         for (i = 0; i < fileName.length; i++){
-          if (!(fileName[i] in niceSymbols)){
-            console.log("JJJJ")
+          console.log(fileName[i].toLowerCase(), niceSymbols.indexOf(fileName[i].toLowerCase()) == -1)
+          if (niceSymbols.indexOf(fileName[i].toLowerCase()) == -1){
+            okay = false
           }
         }
 
         return okay;
       }
 
-      function setError(id){
+      function setError(id, reason){
         document.getElementById(id).value = "ЛАЖА";
         document.getElementById(id).style.color = "#CE2029"
       }
