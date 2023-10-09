@@ -45,6 +45,7 @@ function createFile(
   variants = 1,
   writeID = true
 ) {
+  console.log('hfdifhdshf')
   const path = projectDirectory + "\\latex";
   const id = generateID();
 

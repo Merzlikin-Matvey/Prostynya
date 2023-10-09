@@ -219,13 +219,6 @@
           'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 
           '-', '_', '(', ')'
         ]
-        console.log(fileName.length)
-        for (i = 0; i < fileName.length; i++){
-          console.log(fileName[i].toLowerCase(), niceSymbols.indexOf(fileName[i].toLowerCase()) == -1)
-          if (niceSymbols.indexOf(fileName[i].toLowerCase()) == -1){
-            okay = false
-          }
-        }
 
         return okay;
       }

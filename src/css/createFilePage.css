@@ -15,6 +15,10 @@ body {
 }
 
 #title {
+  position: absolute;
+  top: 5vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
   color: white; /* Цвет текста */
   font-size: 48pt; /* Размер шрифта */
   font-family: "Rubik"; /* Шрифт */
@@ -62,37 +66,43 @@ body {
   color: black; /* Черный цвет текста при наведении */
 }
 
+#divForm {
+  position: absolute;
+  top: 47vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 #download_form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: absolute;
-  top: 80vh;
+  top: 66vh;
   left: 50vw;
   transform: translate(-50%, -50%);
 }
-
 #download_form .button {
-  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-right: 0;
 }
-
 /* Выравнивание текста в плейсхолдерах по центру */
 .input::placeholder {
   text-align: center;
 }
 
-.container1 {
+#download_form {
   position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#divForm {
-  position: absolute;
-  top: 50vh;
+  flex-direction: row;
+  top: 80vh;
   left: 50vw;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+#download_form .button {
+  margin-right: 1vw;
+  margin-right: 1vw;
 }
 
 @media screen and (orientation: portrait) and (max-height: 700px) {
@@ -265,7 +275,7 @@ body {
   }
 }
 
-@media screen and (orientation: landscape) and (min-aspect-ratio: 17/9){
+@media screen and (orientation: landscape) and (min-aspect-ratio: 18/9){
   #title {
     font-size: 35pt; /* Размер шрифта */
     text-align: center; /* Центрирование */
@@ -280,10 +290,6 @@ body {
     width: 365px; /* Ширина кнопки */
     height: 52px; /* Высота кнопки */
     font-size: 19pt; /* Размер шрифта */
-  }
-
-  .container1 {
-    top: 12%;
   }
 
   #divForm {

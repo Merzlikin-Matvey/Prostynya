@@ -225,7 +225,7 @@ body {
   }
 }
 
-@media screen and (orientation: landscape) and (min-aspect-ratio: 17/9){
+@media screen and (orientation: landscape) and (min-aspect-ratio: 18/9){
   #title {
     font-size: 35pt; /* Размер шрифта */
     text-align: center; /* Центрирование */
