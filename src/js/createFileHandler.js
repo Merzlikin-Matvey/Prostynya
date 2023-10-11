@@ -6,7 +6,6 @@ function getFileName(filePath) {
 }
 
 const generateFile = (req, res) => {
-  c
 
   let num = Number(req.body.num);
   let size = Number(req.body.size);
