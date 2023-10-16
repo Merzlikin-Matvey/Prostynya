@@ -66,7 +66,7 @@ function createFile(
   }
 
 
-  if (num > 20000 || size > 10){
+  if (num > 499999 || size > 10){
     return 0;
   }
 
@@ -131,7 +131,8 @@ function createFile(
         ")" +
         "$" +
         "\\,".repeat(
-            1 + 2 * (Math.floor(Math.log10(num + 1)) - Math.floor(Math.log10(i)))
+            1
+            + 2 * (Math.floor(Math.log10(num + 1)) - Math.floor(Math.log10(i)))
         ) +
         solution.toString() +
         "\\,".repeat(2 * (size + 1 - Math.floor(Math.log10(solution)) - 1)) +
