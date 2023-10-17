@@ -110,6 +110,10 @@ function createFile(
       "\\begin{multicols}{2}\n" +
       "\\begin{center} \n";
 
+
+  maximumTaskLength = 2 * Math.floor(Math.log10(num)) + 5
+  maximumSolutionLength = 2 * Math.floor(Math.log10(num)) + 5
+
   for (let i = 1; i < num + 1; i++) {
     let [task, solution] = generateSingleTask(
         (size = size),
@@ -131,12 +135,11 @@ function createFile(
         ")" +
         "$" +
         "\\,".repeat(
-            1
-            + 2 * (Math.floor(Math.log10(num + 1)) - Math.floor(Math.log10(i)))
+            1 + 2 * (Math.floor(Math.log10(num + 1)) - Math.floor(Math.log10(i)))
         ) +
         solution.toString() +
-        "\\,".repeat(2 * (size + 1 - Math.floor(Math.log10(solution)) - 1)) +
-        "$ \\par \n";
+        "\\phantom{" + "0".repeat(maximumSolutionLength - solution.toString().length) + "}" +
+        "$ \\par \n"
   }
 
   taskContent += "\\end{center} \n";
