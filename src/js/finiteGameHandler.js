@@ -1,17 +1,17 @@
-var myAnswers = [];
-var realAnswers = [];
-var currentTask = 0;
+let myAnswers = [];
+let realAnswers = [];
+let currentTask = 0;
 
-var urlParams = new URLSearchParams(window.location.search);
-var tasks = parseInt(urlParams.get("num"), 10);
-var size = parseInt(urlParams.get("size"), 10);
+let urlParams = new URLSearchParams(window.location.search);
+let tasks = parseInt(urlParams.get("num"), 10);
+let size = parseInt(urlParams.get("size"), 10);
 
 function whatToDo(event) {
   if (currentTask < tasks) {
     generateNewTask(event);
     getNewAnswer();
     updateStats(currentTask, tasks);
-  } else if (currentTask == tasks) {
+  } else if (currentTask === tasks) {
     getNewAnswer();
     checkAnswers();
   }
@@ -25,7 +25,7 @@ function updateStats(currentTask, tasks) {
 function checkAnswers() {
   var result = 0;
   for (let i = 0; i < myAnswers.length; i++) {
-    if (myAnswers[i] == realAnswers[i]) {
+    if (myAnswers[i] === realAnswers[i]) {
       result += 1;
     }
   }
@@ -44,7 +44,7 @@ function getNewAnswer() {
 function generateNewTask(event) {
   event.preventDefault();
 
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
 
   xhr.open("POST", "/new_task", true);
 
@@ -52,7 +52,7 @@ function generateNewTask(event) {
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      var responseArray = JSON.parse(xhr.responseText);
+      let responseArray = JSON.parse(xhr.responseText);
       if (Array.isArray(responseArray) && responseArray.length >= 1) {
         var firstValue = responseArray[0];
         var secondValue = Number(responseArray[1]);
@@ -62,7 +62,7 @@ function generateNewTask(event) {
     }
   };
 
-  var data = "size=" + encodeURIComponent(size);
+  const data = "size=" + encodeURIComponent(size);
   xhr.send(data);
 }
 

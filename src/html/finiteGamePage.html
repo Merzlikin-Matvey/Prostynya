@@ -68,7 +68,7 @@
       function generateNewTask(event) {
         event.preventDefault();
 
-        var xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
 
         xhr.open("POST", "/new_task", true);
 
@@ -79,17 +79,17 @@
 
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4 && xhr.status === 200) {
-            var responseArray = JSON.parse(xhr.responseText);
+            let responseArray = JSON.parse(xhr.responseText);
             if (Array.isArray(responseArray) && responseArray.length >= 1) {
-              var firstValue = responseArray[0];
-              var secondValue = Number(responseArray[1]);
+              let firstValue = responseArray[0];
+              let secondValue = Number(responseArray[1]);
               document.getElementById("task").textContent = firstValue;
               realAnswers.push(secondValue);
             }
           }
         };
 
-        var data = "size=" + encodeURIComponent(size);
+        const data = "size=" + encodeURIComponent(size);
         xhr.send(data);
       }
 

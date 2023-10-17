@@ -2,7 +2,7 @@ const path = require("path");
 const { createFile, generateID } = require("./tasks");
 
 function getFileName(filePath) {
-  return (fileName = path.basename(filePath));
+  return path.basename(filePath);
 }
 
 const generateFile = (req, res) => {
@@ -15,11 +15,11 @@ const generateFile = (req, res) => {
   let variants = 1;
   let writeID = true;
 
-  if (!fileName || fileName == "undefined" || fileName == undefined) {
+  if (!fileName || fileName === "undefined" || fileName === undefined) {
     fileName = generateID();
   }
 
-  paths = createFile(num, size, operation, fileTitle, fileName);
+  let paths = createFile(num, size, operation, fileTitle, fileName);
 
   res.setHeader(
     "Content-Disposition",

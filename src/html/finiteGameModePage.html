@@ -53,8 +53,8 @@
       let num = document.getElementById("num").value; 
       let size = document.getElementById("size").value; 
       
-      if (num == ''){ num = 5 }
-      if (size == ''){ size = 3 }
+      if (num === ''){ num = 5 }
+      if (size === ''){ size = 3 }
 
       if (checkArguments(num, size)){
         window.location.href = '/finiteGamePage?num=' + num + '&size=' + size;
@@ -110,14 +110,14 @@
     size.addEventListener("click", isErrorSize);
 
     function isErrorNum() {
-      if (num.value == "ЛАЖА") {
+      if (num.value === "ЛАЖА") {
         num.value = ""
         num.style.color = "#e5e5e5"
       }
     }
 
     function isErrorSize() {
-      if (size.value == "ЛАЖА") {
+      if (size.value === "ЛАЖА") {
         size.value = ""
         size.style.color = "#e5e5e5"
       }

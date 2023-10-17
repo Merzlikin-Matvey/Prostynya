@@ -17,9 +17,9 @@ function generateSingleTask(size = 3, operation = "Addition") {
   if (size > 15){
     return 0;
   }
-  if (operation == "Addition") {
+  if (operation === "Addition") {
     return [a.toString() + "+" + b.toString(), a + b];
-  } else if (operation == "Multiplication") {
+  } else if (operation === "Multiplication") {
     return [a.toString() + "*" + b.toString(), a * b];
   }
 }
@@ -41,10 +41,8 @@ function createFile(
     size = 5,
     operation = "Addition",
     title = "Простыня",
-    fileName = "",
-    variants = 1,
-    writeID = true
-) {
+    fileName = ""
+    ) {
   const directoryPath = path.join(projectDirectory, "latex");
   if (!fs.existsSync(directoryPath)){
     fs.mkdirSync(directoryPath, { recursive: true });
@@ -70,7 +68,7 @@ function createFile(
     return 0;
   }
 
-  solutionName = fileName + "_solution";
+  const solutionName = fileName + "_solution";
 
   let taskPath = path.join(directoryPath, fileName + ".tex");
   let solutionPath = path.join(directoryPath, solutionName + ".tex");
@@ -111,13 +109,12 @@ function createFile(
       "\\begin{center} \n";
 
 
-  maximumTaskLength = 2 * Math.floor(Math.log10(num)) + 5
-  maximumSolutionLength = 2 * Math.floor(Math.log10(num)) + 5
+
+  let maximumSolutionLength = 2 * Math.floor(Math.log10(num)) + 5
 
   for (let i = 1; i < num + 1; i++) {
     let [task, solution] = generateSingleTask(
-        (size = size),
-        (operation = operation)
+        size, operation
     );
 
     taskContent +=
@@ -159,11 +156,10 @@ function createFile(
   exec.execSync(taskCommand);
   exec.execSync(solutionCommand);
 
-  taskPDFPath = path.join(directoryPath, fileName + ".pdf");
-  solutionPDFPath = path.join(directoryPath, solutionName + ".pdf");
+  const taskPDFPath = path.join(directoryPath, fileName + ".pdf");
+  const solutionPDFPath = path.join(directoryPath, solutionName + ".pdf");
 
-  paths = [taskPDFPath, solutionPDFPath];
-  return paths;
+  return [taskPDFPath, solutionPDFPath];
 }
 
 module.exports = { createFile, generateSingleTask, generateID };

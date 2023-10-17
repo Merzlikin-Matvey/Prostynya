@@ -22,9 +22,9 @@
 
 
   <script>
-    var urlParams = new URLSearchParams(window.location.search);
-    var tasks = urlParams.get("num");
-    var result = urlParams.get("result");
+    const urlParams = new URLSearchParams(window.location.search);
+    const tasks = urlParams.get("num");
+    const result = urlParams.get("result");
     document.getElementById("title").innerHTML =
       "Ваш результат" + "<br>" + result + " из " + tasks;
   </script>

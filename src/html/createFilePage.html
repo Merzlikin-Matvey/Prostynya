@@ -127,10 +127,10 @@
             );
 
             if (
-              downloadTaskButton.value == "NOPATH" ||
-              downloadSolutionButton.value == "NOPATH" ||
-              downloadTaskButton.value.length == 0 ||
-              downloadSolutionButton.value.length == 0
+              downloadTaskButton.value === "NOPATH" ||
+              downloadSolutionButton.value === "NOPATH" ||
+              downloadTaskButton.value.length === 0 ||
+              downloadSolutionButton.value.length === 0
             ) {
               downloadTaskButton.style.display = "block";
               downloadSolutionButton.style.display = "block";
@@ -150,15 +150,15 @@
         };
 
         if (checkArguments(num, size, fileTitle, fileName)) {
-          var data =
-            "num=" +
-            encodeURIComponent(num) +
-            "&size=" +
-            encodeURIComponent(size) +
-            "&fileTitle=" +
-            encodeURIComponent(fileTitle) +
-            "&fileName=" +
-            encodeURIComponent(normalizeFileName(fileName));
+          const data =
+                  "num=" +
+                  encodeURIComponent(num) +
+                  "&size=" +
+                  encodeURIComponent(size) +
+                  "&fileTitle=" +
+                  encodeURIComponent(fileTitle) +
+                  "&fileName=" +
+                  encodeURIComponent(normalizeFileName(fileName));
           xhr.send(data);
         }
 
@@ -182,7 +182,7 @@
           }
         } catch {
           if (typeof (num) == "string") {
-            if (num != " ") {
+            if (num !== " ") {
               okay = false;
               setError(num)
             }
@@ -201,7 +201,7 @@
           }
         } catch {
           if (typeof (size) == "string") {
-            if (size != " ") {
+            if (size !== " ") {
               okay = false;
               setError(size)
             }
@@ -222,7 +222,7 @@
       }
 
       function normalizeFileName(string) {
-        alphabet = {
+        const alphabet = {
           'а': 'a',
           'б': 'b',
           'в': 'v',
@@ -254,7 +254,7 @@
           'э': 'a',
           'ю': 'yu',
           'я': 'ya'
-        }
+        };
         let new_string = ''
 
         for (let i = 0; i < string.length; i++){
@@ -291,28 +291,28 @@
       fileName.addEventListener("click", isErrorFileName);
 
       function isErrorNum(){
-        if (num.value == "ЛАЖА"){
+        if (num.value === "ЛАЖА"){
             num.value = ""
             num.style.color = "#e5e5e5"
         }
       }
 
       function isErrorSize(){
-        if (size.value == "ЛАЖА"){
+        if (size.value === "ЛАЖА"){
             size.value = ""
             size.style.color = "#e5e5e5"
         }
       }
 
       function isErrorFileTitle(){
-        if (fileTitle.value == "ЛАЖА"){
+        if (fileTitle.value === "ЛАЖА"){
             fileTitle.value = ""
             fileTitle.style.color = "#e5e5e5"
         }
       }
 
       function isErrorFileName(){
-        if (fileName.value == "ЛАЖА"){
+        if (fileName.value === "ЛАЖА"){
             fileName.value = ""
             fileName.style.color = "#e5e5e5"
         }
