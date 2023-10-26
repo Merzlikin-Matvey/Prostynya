@@ -138,19 +138,19 @@ body {
 
 @media screen and (orientation: landscape) and (min-aspect-ratio: 17.5/9){
   #title {
-    font-size: 74pt; /* Размер шрифта */
+    font-size: 70pt; /* Размер шрифта */
     text-align: center; /* Центрирование */
   }
 
   .button {
-    width: 420px; /* Ширина кнопки */
-    height: 69px; /* Высота кнопки */
+    width: 410px; /* Ширина кнопки */
+    height: 66px; /* Высота кнопки */
     font-size: 26pt; /* Размер шрифта */
   }
 
   .container {
     position: absolute;
-    top: 54vh;
+    top: 60vh;
     left: 50vw;
     transform: translate(-50%, -50%);
     text-align: center;

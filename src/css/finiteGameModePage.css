@@ -225,15 +225,17 @@ body {
   }
 }
 
-@media screen and (orientation: landscape) and (min-aspect-ratio: 18/9){
+@media screen and (orientation: landscape) and (min-aspect-ratio: 17.5/9){
   #title {
     font-size: 35pt; /* Размер шрифта */
     text-align: center; /* Центрирование */
+    top: 10vh;
+    left: 50vw;
   }
 
   .button {
-    width: 400px; /* Ширина кнопки */
-    height: 70px; /* Высота кнопки */
+    width: 405px; /* Ширина кнопки */
+    height: 71px; /* Высота кнопки */
     font-size: 19pt; /* Размер шрифта */
   }
   .input {

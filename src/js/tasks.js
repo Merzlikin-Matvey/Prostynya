@@ -150,11 +150,9 @@ function createFile(
   fs.writeFileSync(taskPath, taskContent);
   fs.writeFileSync(solutionPath, solutionContent);
 
-  const taskCommand = `pdflatex -output-directory=${directoryPath} ${taskPath}`;
-  const solutionCommand = `pdflatex -output-directory=${directoryPath} ${solutionPath}`;
+  console.log(directoryPath)
 
-  exec.execSync(taskCommand);
-  exec.execSync(solutionCommand);
+
 
   const taskPDFPath = path.join(directoryPath, fileName + ".pdf");
   const solutionPDFPath = path.join(directoryPath, solutionName + ".pdf");
