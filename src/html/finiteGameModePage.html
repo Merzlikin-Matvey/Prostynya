@@ -68,7 +68,7 @@
           okay = false;
           setError('num');
         }
-        else if (num > 9999 || num < 0) {
+        else if (num > 9999 || num <= 0) {
           okay = false;
           setError('num');
         }
@@ -84,7 +84,7 @@
           okay = false;
           setError('size');
         }
-        if (size > 8 || num < 0) {
+        if (size > 8 || num <= 0) {
           okay = false;
           setError('size');
         }
