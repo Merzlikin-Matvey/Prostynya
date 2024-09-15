@@ -1,0 +1,127 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: var(--primary-color);
+    padding: 40px;
+    box-sizing: border-box;
+    margin: 20px auto 0;
+    border-radius: 30px;
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.half-width {
+    width: 48%;
+}
+
+.input.half-width:first-child {
+    margin-right: 10%;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input__label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0.5vw;
+    padding: 0.3vw;
+    white-space: nowrap;
+    transform-origin: 0 0;
+    background: var(--primary-color);
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    font-family: "Rubik", sans-serif;
+    line-height: 1.2;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 55px;
+    border: 3px solid var(--secondary-color);
+    padding: 20px 30px 10px 10px;
+    color: var(--primary-text-color);
+    background: transparent;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    pointer-events: auto;
+    line-height: 1.2;
+}
+
+.input__field:focus + .input__label,
+.input__field:not(:placeholder-shown) + .input__label,
+select.input__field:focus + .input__label,
+select.input__field:not([value=""]) + .input__label,
+select.input__field:valid + .input__label {
+    transform: translate(0.45rem, calc(-50% - 1.2rem)) scale(0.8);
+    color: var(--secondary-text-color);
+}
+
+select.input__field:invalid + .input__label {
+    transform: translateY(-50%);
+    color: var(--primary-text-color);
+}
+
+select.input__field {
+    background: var(--primary-color);
+    color: var(--primary-text-color);
+    padding: 15px 30px 10px 10px;
+    height: 55px;
+    line-height: 1.2;
+    appearance: none;
+    display: flex;
+    align-items: center;
+}
+
+select.input__field option {
+    background: var(--background-color);
+    color: var(--primary-text-color);
+    height: 55px;
+    line-height: 1.2;
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.star {
+    font-size: 2rem;
+    color: var(--star-color);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star.hovered {
+    color: var(--selected-star-color);
+}
+
+.star.selected {
+    color: var(--selected-star-color);
+}
