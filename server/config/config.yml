@@ -1,0 +1,3 @@
+trigonometry_template_path: tex/trigonometry.tex
+trigonometry_solutions_template_path: tex/trigonometry_solutions.tex
+files: ../files

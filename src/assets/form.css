@@ -105,23 +105,33 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.star-rating {
+.skull-rating {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-.star {
-    font-size: 2rem;
-    color: var(--star-color);
+.skull {
+    font-size: 2.718281828459045rem;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.5s;
+    opacity: var(--skull-opacity);
+    margin-top: 30px;
 }
 
-.star.hovered {
-    color: var(--selected-star-color);
+.skull.hovered {
+    opacity: var(--skull-selected-opacity);
 }
 
-.star.selected {
-    color: var(--selected-star-color);
+
+.skull.selected {
+    opacity: var(--skull-selected-opacity);
 }
+
+.level {
+    position: absolute;
+    left: 50%;
+    top: 39%;
+    transform: translateX(-50%);
+}
+

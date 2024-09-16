@@ -6,8 +6,11 @@
     --secondary-color: #464f62;
     --primary-text-color: #f5f5f5;
     --secondary-text-color: #c0c0c0;
-    --star-color: #e3dede;
-    --selected-star-color: #ffd700;
+    --hovered-button-color: #f5f5f5;
+    --hovered-button-text-color: #1f273a;
+
+    --skull-opacity: 0.4;
+    --skull-selected-opacity: 1;
 }
 
 body, html {

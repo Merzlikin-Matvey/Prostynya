@@ -21,6 +21,7 @@ coverage
 .vscode/settings.json
 !.vscode/extensions.json
 .idea
+.vscode
 *.suo
 *.ntvs*
 *.njsproj
@@ -165,10 +166,8 @@ dist
 #
 # Recommended template: Node.gitignore
 
-# TODO: where does this rule come from?
 docs/_book
 
-# TODO: where does this rule come from?
 test/
 
 ### Vuejs template
@@ -179,3 +178,5 @@ dist/
 npm-debug.log
 yarn-error.log
 
+server/files/
+server/.vscode/

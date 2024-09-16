@@ -1,0 +1,43 @@
+
+\documentclass[16pt]{article}
+\usepackage[paperheight=297mm,
+    paperwidth=210mm,
+    top=20mm,
+    bottom=20mm,
+    left=15mm,
+    right=15mm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{tabularx}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Тригонометрия}
+\rhead{ {{ id }} }
+
+\begin{document}
+
+\begin{center}
+    \textbf{\LARGE{ {{ title }} }}
+\end{center}
+
+\vspace{0.1cm}
+
+\begin{center}
+    \textit{ {{ rating }}}
+\end{center}
+
+\vspace{0.25cm}
+
+\begin{multicols}{2}
+\begin{enumerate}
+{{ tasks }}
+\end{enumerate}
+\end{multicols}
+
+\end{document}

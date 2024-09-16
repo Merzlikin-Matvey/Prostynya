@@ -1,0 +1,17 @@
+.button {
+    background-color: var(--primary-color);
+    padding: 10px 50px;
+    border-radius: 5px;
+    border: 3px solid var(--secondary-color);
+    color: var(--primary-text-color);
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: transform 2s ease-in;
+}
+
+.button:hover {
+    background-color: var(--hovered-button-color);
+    color: var(--hovered-button-text-color);
+    border: 3px solid transparent;
+}

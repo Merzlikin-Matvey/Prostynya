@@ -1,0 +1,118 @@
+calculations:
+    levels:
+      1:
+        functions: ['sin', 'cos', 'tg']
+        angles: [ '0', '\dfrac{\pi}{6}', '\dfrac{\pi}{4}', '\dfrac{\pi}{3}', '\dfrac{\pi}{2}' ]
+        negative: false
+      2:
+        functions: [ 'sin', 'cos', 'tg', 'ctg' ]
+        angles: [
+            '0', '\dfrac{\pi}{6}', '\dfrac{\pi}{4}', '\dfrac{\pi}{3}', '\dfrac{\pi}{2}',
+            '\dfrac{2\pi}{3}', '\dfrac{5\pi}{6}', '\dfrac{3\pi}{4}', '\dfrac{4\pi}{3}', '\pi'
+        ]
+        negative: false
+      3:
+        functions: [ 'sin', 'cos', 'tg', 'ctg' ]
+        angles: [
+          '0', '\dfrac{\pi}{6}', '\dfrac{\pi}{4}', '\dfrac{\pi}{3}', '\dfrac{\pi}{2}',
+          '\dfrac{2\pi}{3}', '\dfrac{5\pi}{6}', '\dfrac{3\pi}{4}', '\dfrac{4\pi}{3}', '\pi',
+          '\dfrac{7\pi}{6}', '\dfrac{5\pi}{4}', '\dfrac{4\pi}{3}', '\dfrac{3\pi}{2}',
+          '\dfrac{5\pi}{3}', '\dfrac{11\pi}{6}', '\dfrac{7\pi}{4}', '\dfrac{5\pi}{2}'
+        ]
+        negative: true
+      4:
+        functions: [ 'sin', 'cos', 'tg', 'ctg' ]
+        angles: [
+            '\dfrac{57 \pi}{3}', '\dfrac{57 \pi}{4}', '\dfrac{57 \pi}{6}',
+            '\dfrac{58 \pi}{3}', '\dfrac{58 \pi}{4}', '\dfrac{58 \pi}{6}',
+            '\dfrac{179 \pi}{3}', '\dfrac{179 \pi}{4}', '\dfrac{179 \pi}{6}',
+            '\dfrac{1147 \pi}{3}', '\dfrac{1147 \pi}{4}', '\dfrac{1147 \pi}{6}',
+            '\dfrac{1703 \pi}{3}', '\dfrac{1703 \pi}{4}', '\dfrac{1703 \pi}{6}',
+            '\dfrac{2025\pi}{3}', '\dfrac{2025\pi}{4}', '\dfrac{2025\pi}{6}',
+        ]
+        negative: true
+
+      5:
+        functions: [ 'sin', 'cos', 'tg', 'ctg' ]
+        angles: [
+          '\dfrac{57 \pi}{3}', '\dfrac{57 \pi}{4}', '\dfrac{57 \pi}{6}',
+          '\dfrac{58 \pi}{3}', '\dfrac{58 \pi}{4}', '\dfrac{58 \pi}{6}',
+          '\dfrac{179 \pi}{3}', '\dfrac{179 \pi}{4}', '\dfrac{179 \pi}{6}',
+          '\dfrac{1147 \pi}{3}', '\dfrac{1147 \pi}{4}', '\dfrac{1147 \pi}{6}',
+          '\dfrac{1703 \pi}{3}', '\dfrac{1703 \pi}{4}', '\dfrac{1703 \pi}{6}',
+          '\dfrac{2007 \pi}{3}', '\dfrac{2007 \pi}{4}', '\dfrac{2007 \pi}{6}',
+          '\dfrac{2008\pi}{3}', '\dfrac{2008\pi}{4}', '\dfrac{2008\pi}{6}',
+          '\dfrac{2020\pi}{3}', '\dfrac{2020\pi}{4}', '\dfrac{2020\pi}{6}',
+          '\dfrac{2021\pi}{3}', '\dfrac{2021\pi}{4}', '\dfrac{2021\pi}{6}',
+          '\dfrac{2022\pi}{3}', '\dfrac{2022\pi}{4}', '\dfrac{2022\pi}{6}',
+          '\dfrac{2023\pi}{3}', '\dfrac{2023\pi}{4}', '\dfrac{2023\pi}{6}',
+          '\dfrac{2024\pi}{3}', '\dfrac{2024\pi}{4}', '\dfrac{2024\pi}{6}',
+          '\dfrac{2025\pi}{3}', '\dfrac{2025\pi}{4}', '\dfrac{2025\pi}{6}',
+        ]
+        negative: true
+
+relationship:
+  levels:
+    1:
+      functions: ['sin', 'cos']
+      cycles: 2
+    2:
+      functions: [ 'sin', 'cos', 'tg', 'ctg' ]
+      cycles: 4
+    3:
+      functions: [ 'sin', 'cos', 'tg', 'ctg' ]
+      cycles: 64
+    4:
+      functions: [ 'sin', 'cos', 'tg', 'ctg' ]
+      cycles: 128
+    5:
+      functions: [ 'sin', 'cos', 'tg', 'ctg' ]
+      cycles: 256
+
+formulas:
+  levels:
+    1: [
+         '\sin^2 \alpha + \cos^2 \alpha=1',
+         '\tg^2\alpha + 1=\dfrac{1}{\cos^2 \alpha}',
+         '\ctg^2\alpha + 1=\dfrac{1}{\sin^2 \alpha}',
+         '\cos(\alpha - \beta)=\cos\alpha\cdot\cos\beta+\sin\alpha\cdot\sin\beta',
+         '\cos(\alpha+\beta)=\cos\alpha\cdot\cos\beta-\sin\alpha\cdot\sin\beta',
+         '\sin(\alpha+\beta)=\sin\alpha\cdot\cos\beta+\cos\alpha\cdot\sin\beta',
+         '\sin(\alpha-\beta)=\sin\alpha\cdot\cos\beta-\cos\alpha\cdot\sin\beta'
+    ]
+    2: [
+        '\cos (2\alpha)=\cos^2\alpha-\sin^2\alpha',
+        '\sin(2\alpha)=2 \sin \alpha \cdot \cos \alpha',
+        '\tg(2\alpha)=\dfrac{2\tg\alpha}{1-\tg^2\alpha}',
+        '\cos^2\alpha=\dfrac{1+\cos(2\alpha)}{2}',
+        '\sin^2\alpha=\dfrac{1-\cos(2\alpha)}{2}'
+    ]
+    3: [
+        '\cos\alpha+\cos\beta=2\cos\left(\dfrac{ \alpha+\beta }{ 2 }\right)\cdot\cos\left(\dfrac{ \alpha-\beta }{ 2 }\right)',
+        '\cos\alpha-\cos\beta=-2\sin\left(\dfrac{ \alpha+\beta }{ 2 }\right)\cdot\sin\left(\dfrac{ \alpha-\beta }{ 2 }\right)',
+        '\sin\alpha+\sin\beta=2\sin\left(\dfrac{ \alpha+\beta }{ 2 }\right)\cdot\cos\left(\dfrac{ \alpha-\beta }{ 2 }\right)',
+        '\sin\alpha-\sin\beta=2\cos\left(\dfrac{ \alpha+\beta }{ 2 }\right)\cdot\sin\left(\dfrac{ \alpha-\beta }{ 2 }\right)',
+        '\cos\alpha\cdot\cos\beta=\dfrac{ \cos(\alpha+\beta)+\cos(\alpha-\beta) }{ 2 }',
+        '\sin\alpha\cdot\sin\beta=-\dfrac{ \cos(\alpha+\beta)-\cos(\alpha-\beta) }{ 2 }',
+        '\sin\alpha\cdot\cos\beta=\dfrac{ \sin(\alpha+\beta)+\sin(\alpha-\beta) }{ 2 }'
+    ]
+
+    4: [
+        '\tg(\alpha+\beta)=\dfrac{ \tg\alpha+\tg\beta }{ 1-\tg\alpha\cdot\tg\beta }',
+        '\tg(\alpha-\beta)=\dfrac{ \tg\alpha-\tg\beta }{ 1+\tg\alpha\cdot\tg\beta }',
+        '\ctg(\alpha+\beta)=\dfrac{ \ctg\alpha\cdot\ctg\beta-1 }{ \ctg\alpha+\ctg\beta }',
+        '\ctg(\alpha-\beta)=-\dfrac{ \ctg\alpha\cdot\ctg\beta+1 }{ \ctg\alpha-\ctg\beta }',
+        '\ctg(2\alpha)=\dfrac{ \ctg^2\alpha-1 }{ 2\ctg\alpha }',
+        '\cos(3\alpha)=4\cos^3\alpha-3\cos\alpha',
+        '\sin(3\alpha)=3\sin\alpha-4\sin^3\alpha'
+    ]
+    
+    5: [
+        '\tg\alpha+\tg\beta=\dfrac{ \sin(\alpha+\beta) }{ \cos\alpha\cdot\cos\beta }',
+        '\tg\alpha-\tg\beta=\dfrac{ \sin(\alpha-\beta) }{ \cos\alpha\cdot\cos\beta }',
+        '\ctg\alpha+\ctg\beta=\dfrac{ \sin(\alpha+\beta) }{ \sin\alpha\cdot\sin\beta }',
+        '\ctg\alpha-\ctg\beta=-\dfrac{ \sin(\alpha-\beta) }{ \sin\alpha\cdot\sin\beta }',
+        '\ctg\alpha=\dfrac{ 1+\cos 2\alpha }{ \sin 2\alpha }',
+        '\tg \alpha=\dfrac{ 1-\cos 2\alpha }{ \sin 2\alpha }'
+    ]
+
