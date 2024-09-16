@@ -111,8 +111,6 @@ formulas:
         '\tg\alpha+\tg\beta=\dfrac{ \sin(\alpha+\beta) }{ \cos\alpha\cdot\cos\beta }',
         '\tg\alpha-\tg\beta=\dfrac{ \sin(\alpha-\beta) }{ \cos\alpha\cdot\cos\beta }',
         '\ctg\alpha+\ctg\beta=\dfrac{ \sin(\alpha+\beta) }{ \sin\alpha\cdot\sin\beta }',
-        '\ctg\alpha-\ctg\beta=-\dfrac{ \sin(\alpha-\beta) }{ \sin\alpha\cdot\sin\beta }',
-        '\ctg\alpha=\dfrac{ 1+\cos 2\alpha }{ \sin 2\alpha }',
-        '\tg \alpha=\dfrac{ 1-\cos 2\alpha }{ \sin 2\alpha }'
+        '\ctg\alpha-\ctg\beta=-\dfrac{ \sin(\alpha-\beta) }{ \sin\alpha\cdot\sin\beta }'
     ]
 

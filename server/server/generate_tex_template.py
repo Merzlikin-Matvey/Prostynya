@@ -3,8 +3,10 @@ import yaml
 import os
 
 def copy_and_rename_template(id):
-    solution = 'solutions' in id
-    with open('config/config.yml', 'r') as file:
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
+    config_path = os.path.join(project_root, 'config', 'config.yml')
+    solution = 'solution' in id
+    with open(config_path, 'r') as file:
         config = yaml.safe_load(file)
         if not solution:
             template_path = config['trigonometry_template_path']

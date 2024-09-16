@@ -2,15 +2,9 @@ from server.task import *
 
 import numpy as np
 import yaml
+import os
 
-def load_main_config():
-    with open('config/config.yml', 'r') as file:
-        return yaml.safe_load(file)
-
-
-def load_trigonometry_config():
-    with open('config/trigonometry.yml', 'r') as file:
-        return yaml.safe_load(file)
+from server.trigonometry.configs import *
 
 
 def get_random_formula(level):

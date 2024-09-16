@@ -1,8 +1,9 @@
 import numpy as np
 import yaml
+import os
 
 from server.task import *
-
+from server.trigonometry.configs import *
 
 def simplify(function, angle, sign, epsilon=10e-4):
     if function == 'sin':
@@ -52,14 +53,6 @@ def simplify(function, angle, sign, epsilon=10e-4):
 
     return None, None
 
-def load_main_config():
-    with open('config/config.yml', 'r') as file:
-        return yaml.safe_load(file)
-
-
-def load_trigonometry_config():
-    with open('config/trigonometry.yml', 'r') as file:
-        return yaml.safe_load(file)
 
 
 

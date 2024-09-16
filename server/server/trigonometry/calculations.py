@@ -7,6 +7,7 @@ import yaml
 from numpy.ma.core import negative
 
 from server.task import Task
+from server.trigonometry.configs import *
 
 FUNCTIONS = {
     'sin': np.sin,
@@ -29,15 +30,6 @@ VALUES = {
     np.tan(np.pi / 3): r'\sqrt{3}',
 }
 
-
-def load_main_config():
-    with open('config/config.yml', 'r') as file:
-        return yaml.safe_load(file)
-
-
-def load_trigonometry_config():
-    with open('config/trigonometry.yml', 'r') as file:
-        return yaml.safe_load(file)
 
 
 def get_random_function_and_angle(level: int = 1):
@@ -80,7 +72,7 @@ def get_value(function: str, angle: str):
 
 def convert_number_to_tex(number, epsilon=0.0001, inf=10e8):
     if number > inf or number < -inf:
-        return 'Не определено'
+        return r'\mathrm{Не определено}'
 
     for (key, value) in VALUES.items():
         if abs(key - number) < epsilon:
