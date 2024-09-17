@@ -34,8 +34,8 @@
   </div>
   <GeneratingAnimation :isGenerating="isGenerating" />
   <div v-if="id" class="download-buttons">
-    <button class="button" @click="downloadFile(id)">Скачать задания</button>
-    <button class="button" @click="downloadFile(id + '_solutions')">Скачать ответы</button>
+    <button class="button" @click="downloadFile(id)" id="download_tasks">Скачать задания</button>
+    <button class="button" @click="downloadFile(id + '_solutions')" id="download_solutions">Скачать ответы</button>
   </div>
 </template>
 
@@ -131,4 +131,63 @@ html, body {
 .button {
   margin: 5px;
 }
+
+#download_tasks {
+  width: 20vw;
+  margin-right: 1.5vw;
+}
+
+#download_solutions {
+  width: 20vw;
+  margin-left: 1.5vw;
+}
+
+@media screen and (orientation: portrait) {
+  .input-group {
+    flex-direction: column;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .form {
+    width: 90vw;
+  }
+  .level {
+    margin-top: 8vh;
+  }
+  .skull {
+    font-size: 2.2rem;
+  }
+  .skull-rating {
+    margin-top: 6vh;
+  }
+
+  #download_tasks {
+    width: 80vw;
+    margin-right: 1.5vw;
+  }
+
+  #download_solutions {
+    width: 80vw;
+    margin-left: 1.5vw;
+  }
+
+  .input__label {
+    margin-left: 2vw;
+  }
+}
+
+@media screen and (max-height: 750px) {
+  .level {
+    margin-top: 15vh;
+  }
+}
+
+@media screen and (max-height: 680px) {
+  .level {
+    margin-top: 20vh;
+  }
+}
+
+
 </style>

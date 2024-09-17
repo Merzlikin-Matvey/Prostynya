@@ -21,24 +21,20 @@ const navigateToTrigonometry = () => {
   <RouterView />
 </template>
 
-
 <style scoped>
 .type-selector {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   width: 100%;
+  gap: 20px;
 }
 
 .tile {
-  width: 50vh;
-  height: 50vh;
-  margin: 0 50px;
+  width: 30vw;
+  height: 30vw;
   background-color: var(--primary-color);
   color: var(--primary-text-color);
   border: none;
@@ -50,6 +46,7 @@ const navigateToTrigonometry = () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2vw;
 }
 
 .tile:hover {
@@ -57,9 +54,34 @@ const navigateToTrigonometry = () => {
 }
 
 .tile-image {
-  width: 50%;
-  height: 50%;
+  width: 20vw;
+  height: 20vw;
   filter: brightness(0) invert(1);
   border-radius: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .tile {
+    width: 45vw;
+    height: 45vw;
+  }
+  .tile-image {
+    width: 35vw;
+    height: 35vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .type-selector {
+    flex-direction: column;
+  }
+  .tile {
+    width: 60vw;
+    height: 60vw;
+  }
+  .tile-image {
+    width: 42vw;
+    height: 42vw;
+  }
 }
 </style>
