@@ -87,6 +87,7 @@ function sendForm() {
     difficulty
   };
 
+
   fetch('/generate_trigonometry', {
     method: 'POST',
     headers: {
