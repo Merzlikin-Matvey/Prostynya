@@ -1,16 +1,14 @@
 import subprocess
 import os
 
+def render_tex_file(filename):
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
+    output_dir = os.path.join(project_root, 'files')
 
-def render_tex_file(tex_file_path: str):
-    directory, filename = os.path.split(tex_file_path)
+    os.makedirs(output_dir, exist_ok=True)
 
-    os.chdir(directory)
-
-    result = subprocess.run(['pdflatex', filename], capture_output=True, text=True)
-
+    result = subprocess.run(['pdflatex', '-output-directory', output_dir, filename], capture_output=True, text=True, errors='ignore')
     if result.returncode != 0:
-        print("Error rendering the .tex file:")
-        print(result.stderr)
+        print(f"Error rendering {filename}: {result.stderr}")
     else:
-        print("Successfully rendered the .tex file to PDF.")
+        print(f"Successfully rendered {filename}")

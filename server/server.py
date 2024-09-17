@@ -41,6 +41,7 @@ def generate():
     for path in paths:
         render_tex_file(path)
 
+    print("Отправка")
     return jsonify({'id': id})
 
 @app.route('/download/<file_id>', methods=['GET'])

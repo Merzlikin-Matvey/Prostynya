@@ -72,7 +72,7 @@ def get_value(function: str, angle: str):
 
 def convert_number_to_tex(number, epsilon=0.0001, inf=10e8):
     if number > inf or number < -inf:
-        return r'\mathrm{Не определено}'
+        return np.inf
 
     for (key, value) in VALUES.items():
         if abs(key - number) < epsilon:
@@ -97,6 +97,6 @@ def generate_task(level: int = 1):
         tex_task = '\\' + function + r'{\left(' + tex_angle + r'\right)}'
 
 
-    return Task(tex_task, tex_value, level, 'Тригонометрия. Вычисления')
+    return Task(tex_task, tex_value, level, 'Тригонометрия. Вычисления', defined=(tex_value != np.inf))
 
 

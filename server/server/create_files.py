@@ -18,7 +18,10 @@ def generate_trigonometry_files(
     solutions_latex = ''
     for i, task in enumerate(tasks):
         tasks_latex += f'\\item \\begin{{tabularx}}{{\\linewidth}}{{@{{}}l X@{{}}}}${task.task}=$ & \\hrulefill \\end{{tabularx}}\n'
-        solutions_latex += f'\\item ${task.task} = {task.answer}$\n'
+        if task.defined:
+            solutions_latex += f'\\item ${task.task} = {task.answer}$\n'
+        else:
+            solutions_latex += f'\\item ${task.task}$ Не определено!\n'
 
     data = {
         "tasks": tasks_latex,
