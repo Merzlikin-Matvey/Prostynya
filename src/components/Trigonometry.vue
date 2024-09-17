@@ -82,7 +82,7 @@ function sendForm() {
 
   const data = {
     title,
-    grading_system,
+    grading_system_name,
     num_tasks: parseInt(num_tasks),
     difficulty
   };
