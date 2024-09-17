@@ -81,6 +81,13 @@ formulas:
          '\sin(\alpha-\beta)=\sin\alpha\cdot\cos\beta-\cos\alpha\cdot\sin\beta'
     ]
     2: [
+        '\sin^2 \alpha + \cos^2 \alpha=1',
+        '\tg^2\alpha + 1=\dfrac{1}{\cos^2 \alpha}',
+        '\ctg^2\alpha + 1=\dfrac{1}{\sin^2 \alpha}',
+        '\cos(\alpha - \beta)=\cos\alpha\cdot\cos\beta+\sin\alpha\cdot\sin\beta',
+        '\cos(\alpha+\beta)=\cos\alpha\cdot\cos\beta-\sin\alpha\cdot\sin\beta',
+        '\sin(\alpha+\beta)=\sin\alpha\cdot\cos\beta+\cos\alpha\cdot\sin\beta',
+        '\sin(\alpha-\beta)=\sin\alpha\cdot\cos\beta-\cos\alpha\cdot\sin\beta',
         '\cos (2\alpha)=\cos^2\alpha-\sin^2\alpha',
         '\sin(2\alpha)=2 \sin \alpha \cdot \cos \alpha',
         '\tg(2\alpha)=\dfrac{2\tg\alpha}{1-\tg^2\alpha}',
@@ -88,6 +95,18 @@ formulas:
         '\sin^2\alpha=\dfrac{1-\cos(2\alpha)}{2}'
     ]
     3: [
+        '\sin^2 \alpha + \cos^2 \alpha=1',
+        '\tg^2\alpha + 1=\dfrac{1}{\cos^2 \alpha}',
+        '\ctg^2\alpha + 1=\dfrac{1}{\sin^2 \alpha}',
+        '\cos(\alpha - \beta)=\cos\alpha\cdot\cos\beta+\sin\alpha\cdot\sin\beta',
+        '\cos(\alpha+\beta)=\cos\alpha\cdot\cos\beta-\sin\alpha\cdot\sin\beta',
+        '\sin(\alpha+\beta)=\sin\alpha\cdot\cos\beta+\cos\alpha\cdot\sin\beta',
+        '\sin(\alpha-\beta)=\sin\alpha\cdot\cos\beta-\cos\alpha\cdot\sin\beta',
+        '\cos (2\alpha)=\cos^2\alpha-\sin^2\alpha',
+        '\sin(2\alpha)=2 \sin \alpha \cdot \cos \alpha',
+        '\tg(2\alpha)=\dfrac{2\tg\alpha}{1-\tg^2\alpha}',
+        '\cos^2\alpha=\dfrac{1+\cos(2\alpha)}{2}',
+        '\sin^2\alpha=\dfrac{1-\cos(2\alpha)}{2}',
         '\cos\alpha+\cos\beta=2\cos\left(\dfrac{ \alpha+\beta }{ 2 }\right)\cdot\cos\left(\dfrac{ \alpha-\beta }{ 2 }\right)',
         '\cos\alpha-\cos\beta=-2\sin\left(\dfrac{ \alpha+\beta }{ 2 }\right)\cdot\sin\left(\dfrac{ \alpha-\beta }{ 2 }\right)',
         '\sin\alpha+\sin\beta=2\sin\left(\dfrac{ \alpha+\beta }{ 2 }\right)\cdot\cos\left(\dfrac{ \alpha-\beta }{ 2 }\right)',
@@ -98,6 +117,15 @@ formulas:
     ]
 
     4: [
+        '\cos(\alpha - \beta)=\cos\alpha\cdot\cos\beta+\sin\alpha\cdot\sin\beta',
+        '\cos(\alpha+\beta)=\cos\alpha\cdot\cos\beta-\sin\alpha\cdot\sin\beta',
+        '\sin(\alpha+\beta)=\sin\alpha\cdot\cos\beta+\cos\alpha\cdot\sin\beta',
+        '\sin(\alpha-\beta)=\sin\alpha\cdot\cos\beta-\cos\alpha\cdot\sin\beta',
+        '\cos (2\alpha)=\cos^2\alpha-\sin^2\alpha',
+        '\sin(2\alpha)=2 \sin \alpha \cdot \cos \alpha',
+        '\tg(2\alpha)=\dfrac{2\tg\alpha}{1-\tg^2\alpha}',
+        '\cos^2\alpha=\dfrac{1+\cos(2\alpha)}{2}',
+        '\sin^2\alpha=\dfrac{1-\cos(2\alpha)}{2}',
         '\tg(\alpha+\beta)=\dfrac{ \tg\alpha+\tg\beta }{ 1-\tg\alpha\cdot\tg\beta }',
         '\tg(\alpha-\beta)=\dfrac{ \tg\alpha-\tg\beta }{ 1+\tg\alpha\cdot\tg\beta }',
         '\ctg(\alpha+\beta)=\dfrac{ \ctg\alpha\cdot\ctg\beta-1 }{ \ctg\alpha+\ctg\beta }',
@@ -108,9 +136,21 @@ formulas:
     ]
     
     5: [
+        '\cos^2\alpha=\dfrac{1+\cos(2\alpha)}{2}',
+        '\sin^2\alpha=\dfrac{1-\cos(2\alpha)}{2}',
+        '\tg(\alpha+\beta)=\dfrac{ \tg\alpha+\tg\beta }{ 1-\tg\alpha\cdot\tg\beta }',
+        '\tg(\alpha-\beta)=\dfrac{ \tg\alpha-\tg\beta }{ 1+\tg\alpha\cdot\tg\beta }',
+        '\ctg(\alpha+\beta)=\dfrac{ \ctg\alpha\cdot\ctg\beta-1 }{ \ctg\alpha+\ctg\beta }',
+        '\ctg(\alpha-\beta)=-\dfrac{ \ctg\alpha\cdot\ctg\beta+1 }{ \ctg\alpha-\ctg\beta }',
+        '\ctg(2\alpha)=\dfrac{ \ctg^2\alpha-1 }{ 2\ctg\alpha }',
+        '\cos(3\alpha)=4\cos^3\alpha-3\cos\alpha',
+        '\sin(3\alpha)=3\sin\alpha-4\sin^3\alpha',
         '\tg\alpha+\tg\beta=\dfrac{ \sin(\alpha+\beta) }{ \cos\alpha\cdot\cos\beta }',
         '\tg\alpha-\tg\beta=\dfrac{ \sin(\alpha-\beta) }{ \cos\alpha\cdot\cos\beta }',
         '\ctg\alpha+\ctg\beta=\dfrac{ \sin(\alpha+\beta) }{ \sin\alpha\cdot\sin\beta }',
-        '\ctg\alpha-\ctg\beta=-\dfrac{ \sin(\alpha-\beta) }{ \sin\alpha\cdot\sin\beta }'
+        '\ctg\alpha-\ctg\beta=-\dfrac{ \sin(\alpha-\beta) }{ \sin\alpha\cdot\sin\beta }',
+        '\sin\alpha-\sin\beta=2\cos\left(\dfrac{ \alpha+\beta }{ 2 }\right)\cdot\sin\left(\dfrac{ \alpha-\beta }{ 2 }\right)',
+        '\cos\alpha\cdot\cos\beta=\dfrac{ \cos(\alpha+\beta)+\cos(\alpha-\beta) }{ 2 }',
+        '\sin\alpha\cdot\sin\beta=-\dfrac{ \cos(\alpha+\beta)-\cos(\alpha-\beta) }{ 2 }',
     ]
 
