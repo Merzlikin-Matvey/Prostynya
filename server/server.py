@@ -19,9 +19,9 @@ def generate():
     print('Generating trigonometry dictation')
     data = request.json
     title = data.get('title', 'Диктант')
-    grading_system = data.get('grading_system', 'Одна ошибка - балл долой')
-    num_tasks = data.get('num_tasks', 10)
-    difficulty = data.get('difficulty', 1)
+    grading_system = data.get('grading_system_name', 'Всем 2!')
+    num_tasks = data.get('num_tasks', 20)
+    difficulty = data.get('difficulty', 4)
 
     if not isinstance(num_tasks, int) or num_tasks < 1:
        num_tasks = 10
@@ -31,7 +31,7 @@ def generate():
 
     if len(title) < 1 or len(title) > 100 or title == ' ':
         title = 'Диктант'
-        
+
     if len(grading_system) < 2 or not grading_system:
         grading_system = 'Всем 2!'
 
