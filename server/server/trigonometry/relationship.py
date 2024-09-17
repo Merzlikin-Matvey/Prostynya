@@ -89,7 +89,7 @@ def generate_task(level):
             elif cycles // 2 == -1:
                 task_tex = '\\' + function + r'\left(-\pi + \alpha\right)'
             elif cycles < 0:
-                task_tex = '\\' + function + r'\left(-' +  str(-cycles) +  r' \pi + \alpha\right)'
+                task_tex = '\\' + function + r'\left(-' +  str(-cycles // 2) +  r' \pi + \alpha\right)'
             else:
                 task_tex = '\\' + function + r'\left(' +  str(cycles // 2) +  r' \pi + \alpha\right)'
         else:
@@ -98,7 +98,7 @@ def generate_task(level):
             elif cycles // 2 == -1:
                 task_tex = '\\' + function + r'\left(-\pi - \alpha\right)'
             elif cycles < 0:
-                task_tex = '\\' + function + r'\left(-' +  str(-cycles) +  r' \pi + \alpha\right)'
+                task_tex = '\\' + function + r'\left(-' +  str(-cycles // 2) +  r' \pi + \alpha\right)'
             else:
                 task_tex = '\\' + function + r'\left(' +  str(cycles // 2) +  r' \pi - \alpha\right)'
     else:
