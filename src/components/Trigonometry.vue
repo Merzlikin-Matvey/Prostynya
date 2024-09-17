@@ -69,6 +69,17 @@ function sendForm() {
   let num_tasks = (document.getElementById('number-input') as HTMLInputElement).value;
   let difficulty = rating.value;
 
+  let grading_system_name;
+  if (grading_system == 'mark-system-1') {
+    grading_system_name = 'Одна ошибка - балл долой';
+  }
+  else if (grading_system == 'mark-system-2') {
+    grading_system_name = 'Одна ошибка - 2';
+  }
+  else {
+    grading_system_name = 'Всем 2!';
+  }
+
   const data = {
     title,
     grading_system,

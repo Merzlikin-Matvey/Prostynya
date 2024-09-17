@@ -31,9 +31,11 @@ def generate():
 
     if len(title) < 1 or len(title) > 100 or title == ' ':
         title = 'Диктант'
-
+        
     if len(grading_system) < 2 or not grading_system:
         grading_system = 'Всем 2!'
+
+
 
 
     id = generate_id()
