@@ -46,7 +46,7 @@ def generate():
 @app.route('/download/<file_id>', methods=['GET'])
 def download(file_id):
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__)))
-    file_path = os.path.join(project_root, 'files', f'{file_id}.pdf')
+    file_path = os.path.join(project_root, '..', 'files', f'{file_id}.pdf')
     if os.path.exists(file_path):
         return send_file(file_path, as_attachment=True)
     else:
