@@ -14,9 +14,22 @@ fi
 cd ..
 source autovenv/bin/activate
 
+python3.12 -m server &
+SERVER_PID=$!
+sleep 5
+
+if ! ps -p $SERVER_PID > /dev/null; then
+  echo "Ошибка при запуске сервера."
+  exit 1
+fi
+
+pkill -f 'python3.12 -m server'
+
+echo "Запуск сервера в фоновом режиме..."
+
 nohup python3.12 -m server > server.log 2>&1 &
 if [ $? -ne 0 ]; then
-  echo "Ошибка при запуске сервера. Запустите скрипт update.sh для обновления."
+  echo "Ошибка при запуске сервера через nohup. Запустите скрипт update.sh для обновления."
   exit 1
 fi
 
