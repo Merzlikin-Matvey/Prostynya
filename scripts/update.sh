@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+git stash
 git pull
 
 if [ ! -d "../autovenv" ]; then
