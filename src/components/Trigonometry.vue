@@ -6,21 +6,46 @@
       <input type="text" class="input__field" placeholder=" " id="title-input" @input="resetDownloadState" />
       <label for="text-input" class="input__label">Заголовок</label>
     </div>
-    <div class="input-group">
-      <div class="input half-width">
-        <select class="input__field" id="mark-system-input" required @change="resetDownloadState">
-          <option value="" disabled selected></option>
-          <option value="mark-system-1">Одна ошибка - балл долой</option>
-          <option value="mark-system-2">Одна ошибка - 2</option>
-          <option value="mark-system-3">Всем 2!</option>
-        </select>
-        <label for="select-input" class="input__label">Система оценивания</label>
-      </div>
-      <div class="input half-width">
-        <input type="number" class="input__field" placeholder=" " id="number-input" @input="resetDownloadState" />
-        <label for="number-input" class="input__label">Число задач</label>
+    <div class="input mark">
+      <select class="input__field" id="mark-system-input" required @change="resetDownloadState">
+        <option value="" disabled selected></option>
+        <option value="mark-system-1">Одна ошибка - балл долой</option>
+        <option value="mark-system-2">Одна ошибка - 2</option>
+        <option value="mark-system-3">Всем 2!</option>
+      </select>
+      <label for="select-input" class="input__label">Система оценивания</label>
+    </div>
+
+    <h1 class="num_tasks_label">Количество задач</h1>
+
+    <div class="num_tasks_input_div">
+      <h2 class="task_text" id="calculations_text">Табличные углы</h2>
+      <div class="num_task_wrapper">
+        <input class="num_task_input" id="calculations">
       </div>
     </div>
+
+    <div class="num_tasks_input_div">
+      <h2 class="task_text" id="relationships_text">Формулы приведения</h2>
+      <div class="num_task_wrapper">
+        <input class="num_task_input" id="relationships">
+      </div>
+    </div>
+
+    <div class="num_tasks_input_div">
+      <h2 class="task_text" id="formulas_text">Формулы</h2>
+      <div class="num_task_wrapper">
+        <input class="num_task_input" id="formulas">
+      </div>
+    </div>
+
+    <div class="num_tasks_input_div">
+      <h2 class="task_text">Арк функции</h2>
+      <div class="num_task_wrapper">
+        <input class="num_task_input">
+      </div>
+    </div>
+
     <h1 class="level">Сложность</h1>
     <div class="skull-rating">
       <span class="skull" @click="setRatingAndReset(1)" @mouseover="handleMouseOver(0)" @mouseout="handleMouseOut">&#128128;</span>
@@ -66,7 +91,9 @@ function sendForm() {
   isGenerating.value = true;
   let title = (document.getElementById('title-input') as HTMLInputElement).value;
   let grading_system = (document.getElementById('mark-system-input') as HTMLSelectElement).value;
-  let num_tasks = (document.getElementById('number-input') as HTMLInputElement).value;
+  let num_calculations = (document.getElementById('calculations') as HTMLInputElement).value;
+  let num_relationships = (document.getElementById('relationships') as HTMLInputElement).value;
+  let num_formulas = (document.getElementById('formulas') as HTMLInputElement).value;
   let difficulty = rating.value;
 
   let grading_system_name;
@@ -83,10 +110,11 @@ function sendForm() {
   const data = {
     title,
     grading_system_name,
-    num_tasks: parseInt(num_tasks),
+    num_calculations: parseInt(num_calculations),
+    num_relationships: parseInt(num_relationships),
+    num_formulas: parseInt(num_formulas),
     difficulty
   };
-
 
   fetch('/generate_trigonometry', {
     method: 'POST',
@@ -155,17 +183,11 @@ html, body {
 }
 
 @media screen and (orientation: portrait) {
-  .input-group {
-    flex-direction: column;
-  }
   .title {
     font-size: 2.2rem;
   }
   .form {
     width: 90vw;
-  }
-  .level {
-    margin-top: 8vh;
   }
   .skull {
     font-size: 2.2rem;
@@ -187,19 +209,13 @@ html, body {
   .input__label {
     margin-left: 2vw;
   }
-}
 
-@media screen and (max-height: 750px) {
-  .level {
-    margin-top: 15vh;
+  .num_tasks_label {
+    font-size: 1.5rem;
+    white-space: nowrap;
   }
 }
 
-@media screen and (max-height: 680px) {
-  .level {
-    margin-top: 20vh;
-  }
-}
 
 
 </style>

@@ -5,7 +5,9 @@ import os
 
 def generate_trigonometry_files(
         id: str,
-        num: int,
+        num_calculations: int,
+        num_relationships: int,
+        num_formulas: int,
         level: int,
         title: str = 'Диктант',
         rating: str = 'Всем 2!'
@@ -13,7 +15,12 @@ def generate_trigonometry_files(
     copy_and_rename_template(id)
     copy_and_rename_template(f'{id}_solutions')
 
-    tasks = trigonometry.generate_trigonometry_tasks(num, level)
+    tasks = trigonometry.generate_trigonometry_tasks(
+        calculations=num_calculations,
+        relationships=num_relationships,
+        formulas=num_formulas,
+        level=level
+    )
     tasks_latex = ''
     solutions_latex = ''
     for i, task in enumerate(tasks):

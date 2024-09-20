@@ -43,6 +43,7 @@ const navigateToTrigonometry = () => {
 .footer-text {
   color: rgba(255, 255, 255, 0.65);
   transition: color 0.5s ease;
+  white-space: nowrap;
 }
 
 .footer-text:hover {

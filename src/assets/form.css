@@ -5,7 +5,7 @@
     justify-content: center;
     width: 50%;
     background-color: var(--primary-color);
-    padding: 40px;
+    padding: 20px;
     box-sizing: border-box;
     margin: 20px auto 0;
     border-radius: 30px;
@@ -19,7 +19,7 @@
 }
 
 .half-width {
-    width: 48%;
+    width: 100%;
 }
 
 .input.half-width:first-child {
@@ -99,7 +99,6 @@ select.input__field option {
     line-height: 1.2;
 }
 
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -109,7 +108,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .skull-rating {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: -6vh;
 }
 
 .skull {
@@ -124,15 +123,114 @@ input[type="number"]::-webkit-outer-spin-button {
     opacity: var(--skull-selected-opacity);
 }
 
-
 .skull.selected {
     opacity: var(--skull-selected-opacity);
 }
 
-.level {
-    position: absolute;
-    left: 50%;
-    top: 39%;
-    transform: translateX(-50%);
+.num_tasks_label {
+    margin-top: 0;
+    margin-bottom: -27px;
 }
+
+.num_tasks_input_div {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.task_text {
+    position: absolute;
+    left: 31vw;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.num_task_input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 3px solid var(--secondary-color);
+    padding: 10px;
+    color: var(--primary-text-color);
+    background: transparent;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.4rem;
+    pointer-events: auto;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.num_task_wrapper {
+    position: absolute;
+    width: 8vw;
+    right: 31vw;
+}
+
+.level {
+    margin-top: 5vh;
+}
+
+@media screen and (max-width: 768px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        background-color: var(--primary-color);
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 20px auto 0;
+        border-radius: 30px;
+    }
+
+
+
+    .num_tasks_input_div {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .task_text {
+        position: static;
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    .num_task_wrapper {
+        position: static;
+        width: 100%;
+    }
+
+    .num_task_input {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .task_text {
+        font-size: 0.9rem;
+    }
+
+    .num_task_input {
+        font-size: 1.2rem;
+    }
+
+
+
+    .level {
+        margin-bottom: -10vh;
+    }
+}
+
+
 

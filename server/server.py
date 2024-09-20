@@ -20,11 +20,22 @@ def generate():
     data = request.json
     title = data.get('title', 'Диктант')
     grading_system = data.get('grading_system_name', 'Всем 2!')
-    num_tasks = data.get('num_tasks', 20)
+    num_calculations = data.get('num_calculations', 2)
+    num_relationships = data.get('num_relationships', 2)
+    num_formulas = data.get('num_formulas', 2)
     difficulty = data.get('difficulty', 4)
 
-    if not isinstance(num_tasks, int) or num_tasks < 1:
-       num_tasks = 10
+    num_calculations = num_calculations if num_calculations is not None else 0
+    num_relationships = num_relationships if num_relationships is not None else 0
+    num_formulas = num_formulas if num_formulas is not None else 0
+
+
+    num = num_calculations + num_relationships + num_formulas
+    if num > 239:
+        num_calculations = 80
+        num_relationships = 80
+        num_formulas = 80
+
 
     if not isinstance(difficulty, int) or difficulty < 1 or difficulty > 5:
         difficulty = 4
@@ -36,7 +47,14 @@ def generate():
         grading_system = 'Всем 2!'
 
     id = generate_id()
-    paths = generate_trigonometry_files(id, num_tasks, difficulty, title=title, rating=grading_system)
+    paths = generate_trigonometry_files(
+        id=id,
+        num_calculations=num_calculations,
+        num_relationships=num_relationships,
+        num_formulas=num_formulas,
+        level=difficulty,
+        title=title,
+        rating=grading_system)
     for path in paths:
         render_tex_file(path)
 
