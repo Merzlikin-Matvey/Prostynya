@@ -10,6 +10,12 @@ const navigateToTrigonometry = () => {
 </script>
 
 <template>
+  <div class="footer">
+    <p class="footer-text">Made by Matvey Merzlikin</p>
+    <a href="https://github.com/Merzlikin-Matvey/Prostynya" target="_blank">
+      <img src="../res/github.png" alt="GitHub" class="github-logo"/>
+    </a>
+  </div>
   <div class="type-selector">
     <button class="tile" @click="navigateToTrigonometry">
       <img src="../res/trigonometry.png" alt="Trigonometry" class="tile-image" id="trigonometry"/>
@@ -22,12 +28,40 @@ const navigateToTrigonometry = () => {
 </template>
 
 <style scoped>
+.footer {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.5s ease;
+}
+
+.footer-text:hover {
+  color: white;
+}
+
+.github-logo {
+  width: auto;
+  height: 5vh;
+  filter: brightness(0) invert(1);
+  margin-top: -15px;
+}
+
 .type-selector {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   gap: 20px;
 }
