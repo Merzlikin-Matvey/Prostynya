@@ -1,5 +1,5 @@
-import server.trigonometry.trigonometry as trigonometry
-from server.generate_tex_template import copy_and_rename_template, edit_file
+from .trigonometry import trigonometry
+from .generate_tex_template import copy_and_rename_template, edit_file
 import os
 
 

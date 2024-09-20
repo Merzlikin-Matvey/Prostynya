@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_file, send_from_directory
-from server.create_files import generate_trigonometry_files
-from server.id import generate_id
-from server.render import render_tex_file
+from .create_files import generate_trigonometry_files
+from .id import generate_id
+from .render import render_tex_file
 import os
 
 app = Flask(__name__, static_folder='../dist', static_url_path='')
@@ -35,9 +35,6 @@ def generate():
     if len(grading_system) < 2 or not grading_system:
         grading_system = 'Всем 2!'
 
-
-
-
     id = generate_id()
     paths = generate_trigonometry_files(id, num_tasks, difficulty, title=title, rating=grading_system)
     for path in paths:
@@ -55,5 +52,6 @@ def download(file_id):
     else:
         return jsonify({'error': 'File not found'}), 404
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+
+
+

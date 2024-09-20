@@ -178,5 +178,5 @@ dist/
 npm-debug.log
 yarn-error.log
 
-server/files/
+files/
 server/.vscode/
