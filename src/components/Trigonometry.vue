@@ -191,7 +191,7 @@ function setRatingAndReset(value: number) {
 }
 </script>
 
-<style>
+<style scoped>
 html, body {
   width: 100%;
   height: 100%;
@@ -236,7 +236,6 @@ html, body {
   opacity: 1;
 }
 
-
 input[type=checkbox] {
   height: 0;
   width: 0;
@@ -265,33 +264,22 @@ input[type=checkbox] {
   height: 70px;
   background: #fff;
   border-radius: 90px;
-  transition: width 0.2s ease;
+  transition: width 0.2s ease, left 0.2s ease, transform 0.2s ease;
 }
 
 input:checked + .toggle:after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
+  transition: width 0.2s ease, left 0.2s ease, transform 0.2s ease;
 }
 
 .toggle:active:after {
-  width: 100px;
-}
-
-.toggle:active:after {
-  width: 130px;
+  width: 90px;
+  transition: width 0.2s ease;
 }
 
 input:checked + .toggle {
   background: var(--toggle-button-active);
-}
-
-input:checked + .toggle:after {
-  left: calc(100% - 5px);
-  transform: translateX(-100%);
-}
-
-.toggle:active:after {
-  width: 130px;
 }
 
 .toggle-div {
@@ -309,6 +297,16 @@ input:checked + .toggle:after {
   .toggle:after {
     width: 50px;
     height: 50px;
+    transition: width 0.5s ease, left 0.5s ease;
+  }
+
+  input:checked + .toggle:after {
+    transition: width 0.5s ease, left 0.5s ease;
+  }
+
+  .toggle:active:after {
+    width: 60px;
+    transition: width 0.5s ease;
   }
 }
 
@@ -319,11 +317,20 @@ input:checked + .toggle:after {
   }
 
   .toggle:after {
-    width: 40px;
-    height: 40px;
+    width: 30px; /* Уменьшено */
+    height: 30px; /* Уменьшено */
+    transition: width 0.7s ease, left 0.7s ease;
+  }
+
+  input:checked + .toggle:after {
+    transition: width 0.7s ease, left 0.7s ease;
+  }
+
+  .toggle:active:after {
+    width: 40px; /* Уменьшено */
+    transition: width 0.7s ease;
   }
 }
-
 
 @media screen and (orientation: portrait) {
   .toggle-div {
@@ -338,9 +345,11 @@ input:checked + .toggle:after {
   .degrees-label {
     margin-top: 10px;
   }
+
+  .toggle:active:after {
+    width: 50px;
+  }
 }
-
-
 
 @media screen and (min-width: 769px) {
   .toggle-div {
@@ -360,12 +369,15 @@ input:checked + .toggle:after {
   .title {
     font-size: 2.2rem;
   }
+
   .form {
     width: 90vw;
   }
+
   .skull {
     font-size: 2.2rem;
   }
+
   .skull-rating {
     margin-top: 6vh;
   }
@@ -389,7 +401,4 @@ input:checked + .toggle:after {
     white-space: nowrap;
   }
 }
-
-
-
 </style>
