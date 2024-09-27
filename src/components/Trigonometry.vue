@@ -55,10 +55,10 @@
       <span class="skull" @click="setRatingAndReset(5)" @mouseover="handleMouseOver(4)" @mouseout="handleMouseOut">&#128128;</span>
     </div>
     <div class="toggle-div">
-      <h2>Радианы</h2>
-      <input type="checkbox" id="radians" />
-      <label for="radians" class="toggle" id="radians-toggle" @click="toggle_state()">Toggle</label>
-      <h2>Градусы</h2>
+      <h2 class="radians-label active">Радианы</h2>
+      <input type="checkbox" id="radians" @change="toggle_state" />
+      <label for="radians" class="toggle" id="radians-toggle">Toggle</label>
+      <h2 class="degrees-label inactive">Градусы</h2>
     </div>
     <h1 class="level_name"></h1>
     <button class="button" id="generate" @click="sendForm()">Сгенерировать</button>
@@ -74,9 +74,10 @@
 import '../assets/styles.css';
 import '../assets/form.css';
 import '../assets/button.css';
-import { watch, onMounted, ref } from 'vue';
+import {watch, onMounted, ref, nextTick} from 'vue';
 import { updateStars, rating, handleMouseOut, handleMouseOver, setRating } from "../skulls";
 import GeneratingAnimation from './GeneratingAnimation.vue';
+
 
 handleMouseOut();
 handleMouseOver(0);
@@ -93,6 +94,20 @@ let radians = true;
 
 function toggle_state() {
   radians = !radians;
+  const radiansLabel = document.querySelector('.radians-label');
+  const degreesLabel = document.querySelector('.degrees-label');
+
+  if (radians) {
+    radiansLabel.classList.add('active');
+    radiansLabel.classList.remove('inactive');
+    degreesLabel.classList.add('inactive');
+    degreesLabel.classList.remove('active');
+  } else {
+    radiansLabel.classList.add('inactive');
+    radiansLabel.classList.remove('active');
+    degreesLabel.classList.add('active');
+    degreesLabel.classList.remove('inactive');
+  }
 }
 
 
@@ -102,22 +117,20 @@ const isGenerating = ref(false);
 function sendForm() {
   resetDownloadState();
   isGenerating.value = true;
+
   let title = (document.getElementById('title-input') as HTMLInputElement).value;
   let grading_system = (document.getElementById('mark-system-input') as HTMLSelectElement).value;
   let num_calculations = (document.getElementById('calculations') as HTMLInputElement).value;
   let num_relationships = (document.getElementById('relationships') as HTMLInputElement).value;
   let num_formulas = (document.getElementById('formulas') as HTMLInputElement).value;
   let difficulty = rating.value;
-  console.log(radians)
 
   let grading_system_name;
   if (grading_system == 'mark-system-1') {
     grading_system_name = 'Одна ошибка - балл долой';
-  }
-  else if (grading_system == 'mark-system-2') {
+  } else if (grading_system == 'mark-system-2') {
     grading_system_name = 'Одна ошибка - 2';
-  }
-  else {
+  } else {
     grading_system_name = 'Всем 2!';
   }
 
@@ -143,11 +156,23 @@ function sendForm() {
         id.value = result.id;
         isGenerating.value = false;
         console.log('Generated ID:', id.value);
+
+        nextTick(() => {
+          const downloadButtons = document.querySelector('.download-buttons');
+          if (downloadButtons) {
+            downloadButtons.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
       })
       .catch(error => {
         isGenerating.value = false;
         console.error('Error:', error);
       });
+
+  const generatingElement = document.querySelector('.generating-text');
+  if (generatingElement) {
+    generatingElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 }
 
 function downloadFile(fileId: string) {
@@ -195,6 +220,124 @@ html, body {
 #download_solutions {
   width: 20vw;
   margin-left: 1.5vw;
+}
+
+.radians-label, .degrees-label {
+  transition: opacity 0.3s;
+}
+
+.radians-label.inactive, .degrees-label.inactive {
+  opacity: 0.4;
+}
+
+.radians-label.active, .degrees-label.active {
+  opacity: 1;
+}
+
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 170px;
+  height: 80px;
+  background: var(--toggle-button-passive);
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin: 20px 40px 30px;
+}
+
+.toggle:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + .toggle {
+  background: var(--toggle-button-active);
+}
+
+input:checked + .toggle:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.toggle:active:after {
+  width: 130px;
+}
+
+.toggle-div {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .toggle {
+    width: 120px;
+    height: 60px;
+  }
+
+  .toggle:after {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .toggle {
+    width: 100px;
+    height: 50px;
+  }
+
+  .toggle:after {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+@media screen and (orientation: portrait) {
+  .toggle-div {
+    flex-direction: column;
+  }
+
+  .radians-label {
+    order: -1;
+    margin-bottom: 10px;
+  }
+
+  .degrees-label {
+    margin-top: 10px;
+  }
+}
+
+
+
+@media screen and (min-width: 769px) {
+  .toggle-div {
+    flex-direction: row;
+  }
+
+  .radians-label {
+    margin-right: 20px;
+  }
+
+  .degrees-label {
+    margin-left: 20px;
+  }
 }
 
 @media screen and (orientation: portrait) {

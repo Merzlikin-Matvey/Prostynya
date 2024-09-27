@@ -9,6 +9,7 @@
     box-sizing: border-box;
     margin: 20px auto 0;
     border-radius: 30px;
+
 }
 
 .input-group {
@@ -172,55 +173,6 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 5vh;
 }
 
-input[type=checkbox]{
-    height: 0;
-    width: 0;
-    visibility: hidden;
-}
-
-.toggle {
-    cursor: pointer;
-    text-indent: -9999px;
-    width: 170px;
-    height: 80px;
-    background: var(--toggle-button-passive);
-    display: block;
-    border-radius: 100px;
-    position: relative;
-    margin: 20px 40px 30px;
-
-}
-
-.toggle:after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 70px;
-    height: 70px;
-    background: #fff;
-    border-radius: 90px;
-    transition: 0.3s;
-}
-
-input:checked + .toggle {
-    background: var(--toggle-button-active)
-}
-
-input:checked + .toggle:after {
-    left: calc(100% - 5px);
-    transform: translateX(-100%);
-}
-
-.toggle:active:after {
-    width: 130px;
-}
-
-.toggle-div {
-    display: flex;
-    align-items: center;
-    margin-top: 60px;
-}
 
 @media screen and (max-width: 768px) {
     .form {
@@ -235,8 +187,6 @@ input:checked + .toggle:after {
         margin: 20px auto 0;
         border-radius: 30px;
     }
-
-
 
     .num_tasks_input_div {
         flex-direction: column;
@@ -274,8 +224,6 @@ input:checked + .toggle:after {
     .num_task_input {
         font-size: 1.2rem;
     }
-
-
 
     .level {
         margin-bottom: -10vh;

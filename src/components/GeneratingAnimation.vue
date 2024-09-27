@@ -1,15 +1,16 @@
 <template>
-  <div v-if="isGenerating" :class="['generating', { fadeOut: !isGenerating }]">
+  <div v-if="isGenerating" :class="['generating', { fadeOut: !isGenerating }]" ref="generatingText">
     Генерируется{{ dots }}
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch, toRef } from 'vue';
+import { ref, watch, toRef, nextTick } from 'vue';
 
 const props = defineProps<{ isGenerating: boolean }>();
 const isGeneratingRef = toRef(props, 'isGenerating');
 const dots = ref('');
+const generatingText = ref<HTMLElement | null>(null);
 
 let interval: number;
 watch(isGeneratingRef, (newVal) => {
@@ -17,6 +18,11 @@ watch(isGeneratingRef, (newVal) => {
     interval = setInterval(() => {
       dots.value = dots.value.length < 3 ? dots.value + '.' : '';
     }, 500);
+    nextTick(() => {
+      if (generatingText.value) {
+        generatingText.value.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
   } else {
     clearInterval(interval);
     dots.value = '';
@@ -33,9 +39,6 @@ watch(isGeneratingRef, (newVal) => {
   animation: fadeIn 0.3s forwards;
 }
 
-.fadeOut {
-  animation: fadeOut 0.3s forwards;
-}
 
 @keyframes fadeIn {
   to {
