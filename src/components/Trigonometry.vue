@@ -253,6 +253,7 @@ input[type=checkbox] {
   border-radius: 100px;
   position: relative;
   margin: 20px 40px 30px;
+  overflow: hidden;
 }
 
 .toggle:after {
@@ -264,7 +265,20 @@ input[type=checkbox] {
   height: 70px;
   background: #fff;
   border-radius: 90px;
-  transition: 0.3s;
+  transition: width 0.2s ease;
+}
+
+input:checked + .toggle:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.toggle:active:after {
+  width: 100px;
+}
+
+.toggle:active:after {
+  width: 130px;
 }
 
 input:checked + .toggle {
