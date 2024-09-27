@@ -1,3 +1,5 @@
+from math import radians
+
 from flask import Flask, request, jsonify, send_file, send_from_directory
 from .create_files import generate_trigonometry_files
 from .id import generate_id
@@ -24,6 +26,7 @@ def generate():
     num_relationships = data.get('num_relationships', 2)
     num_formulas = data.get('num_formulas', 2)
     difficulty = data.get('difficulty', 4)
+    radians = data.get('radians', True)
 
     num_calculations = num_calculations if num_calculations is not None else 0
     num_relationships = num_relationships if num_relationships is not None else 0
@@ -54,7 +57,9 @@ def generate():
         num_formulas=num_formulas,
         level=difficulty,
         title=title,
-        rating=grading_system)
+        rating=grading_system,
+        radians=radians
+    )
     for path in paths:
         render_tex_file(path)
 

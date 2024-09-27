@@ -8,3 +8,6 @@ class Task:
 
     def __str__(self):
         return f'{self.task} = {self.answer}'
+
+    def __repr__(self):
+        return f'{self.task} = {self.answer}'

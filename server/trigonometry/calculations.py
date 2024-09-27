@@ -85,10 +85,20 @@ def convert_number_to_tex(number, epsilon=0.0001, inf=10e8):
 def is_negative(angle: str):
     return '-' in angle
 
-def generate_task(level: int = 1):
+def rad_to_deg(angle):
+    value = convert_tex_angle_to_number(angle)
+    return round(value / np.pi * 180)
+
+def deg_to_tex(deg_value):
+    return str(deg_value) + r'^{\circ}'
+
+def generate_task(level: int = 1, radians: bool = 1):
     function, angle = get_random_function_and_angle(level)
     value = get_value(function, angle)
-    tex_angle = angle.replace('*', r'\cdot ')
+    if radians:
+        tex_angle = angle.replace('*', r'\cdot ')
+    else:
+        tex_angle = deg_to_tex(rad_to_deg(angle))
     tex_value = convert_number_to_tex(value)
 
     if not is_negative(angle):

@@ -10,7 +10,8 @@ def generate_trigonometry_tasks(
         calculations: int = 2,
         relationships: int = 2,
         formulas: int = 2,
-        level: int = 1
+        level: int = 5,
+        radians: bool = True
 ) -> typing.List[Task]:
     config = load_trigonometry_config()
     calculations_probs = config['probabilities']['calculations']['levels'][level]
@@ -20,12 +21,12 @@ def generate_trigonometry_tasks(
 
     for i in range(calculations):
         current_level = np.random.choice([1, 2, 3, 4, 5], p=calculations_probs)
-        task = generate_calculation_task(level=current_level)
+        task = generate_calculation_task(level=current_level, radians=radians)
         tasks.append(task)
 
     for i in range(relationships):
         current_level = np.random.choice([1, 2, 3, 4, 5], p=relationships_probs)
-        task = generate_relationship_task(level=current_level)
+        task = generate_relationship_task(level=current_level, radians=radians)
         tasks.append(task)
 
     for i in range(formulas):
@@ -35,4 +36,5 @@ def generate_trigonometry_tasks(
 
     np.random.shuffle(tasks)
 
+    print('tasks_generated')
     return tasks

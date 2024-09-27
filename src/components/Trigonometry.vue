@@ -54,6 +54,12 @@
       <span class="skull" @click="setRatingAndReset(4)" @mouseover="handleMouseOver(3)" @mouseout="handleMouseOut">&#128128;</span>
       <span class="skull" @click="setRatingAndReset(5)" @mouseover="handleMouseOver(4)" @mouseout="handleMouseOut">&#128128;</span>
     </div>
+    <div class="toggle-div">
+      <h2>Радианы</h2>
+      <input type="checkbox" id="radians" />
+      <label for="radians" class="toggle" id="radians-toggle" @click="toggle_state()">Toggle</label>
+      <h2>Градусы</h2>
+    </div>
     <h1 class="level_name"></h1>
     <button class="button" id="generate" @click="sendForm()">Сгенерировать</button>
   </div>
@@ -83,6 +89,13 @@ onMounted(() => {
   updateStars(rating.value);
 });
 
+let radians = true;
+
+function toggle_state() {
+  radians = !radians;
+}
+
+
 const id = ref<string | null>(null);
 const isGenerating = ref(false);
 
@@ -95,6 +108,7 @@ function sendForm() {
   let num_relationships = (document.getElementById('relationships') as HTMLInputElement).value;
   let num_formulas = (document.getElementById('formulas') as HTMLInputElement).value;
   let difficulty = rating.value;
+  console.log(radians)
 
   let grading_system_name;
   if (grading_system == 'mark-system-1') {
@@ -113,7 +127,8 @@ function sendForm() {
     num_calculations: parseInt(num_calculations),
     num_relationships: parseInt(num_relationships),
     num_formulas: parseInt(num_formulas),
-    difficulty
+    difficulty,
+    radians
   };
 
   fetch('/generate_trigonometry', {

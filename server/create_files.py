@@ -10,7 +10,8 @@ def generate_trigonometry_files(
         num_formulas: int,
         level: int,
         title: str = 'Диктант',
-        rating: str = 'Всем 2!'
+        rating: str = 'Всем 2!',
+        radians: bool = True
 ):
     copy_and_rename_template(id)
     copy_and_rename_template(f'{id}_solutions')
@@ -19,7 +20,8 @@ def generate_trigonometry_files(
         calculations=num_calculations,
         relationships=num_relationships,
         formulas=num_formulas,
-        level=level
+        level=level,
+        radians=radians
     )
     tasks_latex = ''
     solutions_latex = ''
