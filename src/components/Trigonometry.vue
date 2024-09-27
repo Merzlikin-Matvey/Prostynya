@@ -97,16 +97,18 @@ function toggle_state() {
   const radiansLabel = document.querySelector('.radians-label');
   const degreesLabel = document.querySelector('.degrees-label');
 
-  if (radians) {
-    radiansLabel.classList.add('active');
-    radiansLabel.classList.remove('inactive');
-    degreesLabel.classList.add('inactive');
-    degreesLabel.classList.remove('active');
-  } else {
-    radiansLabel.classList.add('inactive');
-    radiansLabel.classList.remove('active');
-    degreesLabel.classList.add('active');
-    degreesLabel.classList.remove('inactive');
+  if (radiansLabel && degreesLabel) {
+    if (radians) {
+      radiansLabel.classList.add('active');
+      radiansLabel.classList.remove('inactive');
+      degreesLabel.classList.add('inactive');
+      degreesLabel.classList.remove('active');
+    } else {
+      radiansLabel.classList.add('inactive');
+      radiansLabel.classList.remove('active');
+      degreesLabel.classList.add('active');
+      degreesLabel.classList.remove('inactive');
+    }
   }
 }
 
