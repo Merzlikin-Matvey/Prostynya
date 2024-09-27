@@ -264,18 +264,18 @@ input[type=checkbox] {
   height: 70px;
   background: #fff;
   border-radius: 90px;
-  transition: width 0.2s ease, left 0.2s ease, transform 0.2s ease;
+  transition: width 0.25s ease, left 0.25s ease, transform 0.25s ease;
 }
 
 input:checked + .toggle:after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
-  transition: width 0.2s ease, left 0.2s ease, transform 0.2s ease;
+  transition: width 0.25s ease, left 0.25s ease, transform 0.25s ease;
 }
 
 .toggle:active:after {
   width: 90px;
-  transition: width 0.2s ease;
+  transition: width 0.25s ease, left 0.25s ease, transform 0.25s ease;
 }
 
 input:checked + .toggle {
@@ -288,49 +288,6 @@ input:checked + .toggle {
   margin-top: 60px;
 }
 
-@media screen and (max-width: 768px) {
-  .toggle {
-    width: 120px;
-    height: 60px;
-  }
-
-  .toggle:after {
-    width: 50px;
-    height: 50px;
-    transition: width 0.5s ease, left 0.5s ease;
-  }
-
-  input:checked + .toggle:after {
-    transition: width 0.5s ease, left 0.5s ease;
-  }
-
-  .toggle:active:after {
-    width: 60px;
-    transition: width 0.5s ease;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .toggle {
-    width: 100px;
-    height: 50px;
-  }
-
-  .toggle:after {
-    width: 30px; /* Уменьшено */
-    height: 30px; /* Уменьшено */
-    transition: width 0.7s ease, left 0.7s ease;
-  }
-
-  input:checked + .toggle:after {
-    transition: width 0.7s ease, left 0.7s ease;
-  }
-
-  .toggle:active:after {
-    width: 40px; /* Уменьшено */
-    transition: width 0.7s ease;
-  }
-}
 
 @media screen and (orientation: portrait) {
   .toggle-div {
@@ -346,24 +303,20 @@ input:checked + .toggle {
     margin-top: 10px;
   }
 
-  .toggle:active:after {
-    width: 50px;
+  .toggle {
+    width: 150px;
+    height: 70px;
   }
+
+  .toggle:after {
+    width: 60px;
+    height: 60px;
+  }
+
+
+
 }
 
-@media screen and (min-width: 769px) {
-  .toggle-div {
-    flex-direction: row;
-  }
-
-  .radians-label {
-    margin-right: 20px;
-  }
-
-  .degrees-label {
-    margin-left: 20px;
-  }
-}
 
 @media screen and (orientation: portrait) {
   .title {
