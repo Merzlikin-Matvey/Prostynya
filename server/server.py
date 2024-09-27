@@ -1,5 +1,3 @@
-from math import radians
-
 from flask import Flask, request, jsonify, send_file, send_from_directory
 from .create_files import generate_trigonometry_files
 from .id import generate_id
@@ -39,6 +37,11 @@ def generate():
         num_relationships = 80
         num_formulas = 80
 
+    if num < 1:
+        num_calculations = 5
+        num_relationships = 5
+        num_formulas = 5
+
 
     if not isinstance(difficulty, int) or difficulty < 1 or difficulty > 5:
         difficulty = 4
@@ -48,6 +51,9 @@ def generate():
 
     if len(grading_system) < 2 or not grading_system:
         grading_system = 'Всем 2!'
+
+    if not isinstance(radians, bool):
+        radians = True
 
     id = generate_id()
     paths = generate_trigonometry_files(
