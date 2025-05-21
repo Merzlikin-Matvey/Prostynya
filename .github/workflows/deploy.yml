@@ -19,10 +19,10 @@ jobs:
           username: github-deploy-user
           password: ${{ secrets.DEPLOY_PASSWORD }}
           script: |
-            docker-compose down
+            docker compose down
             if [ -d /home/prostynya ]; then
               rm -rf /home/prostynya
             fi
             git clone -b main --single-branch https://github.com/Merzlikin-Matvey/Prostynya.git /home/prostynya
             cd /home/prostynya
-            docker-compose up --build -d
+            docker compose up --build -d
