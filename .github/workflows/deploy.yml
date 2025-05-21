@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: Rxinui/ssh-deploy-repo-action@v1.1
+        with:
+          ssh-user: github-deploy-user
+          ssh-password: ${{ secrets.DEPLOY_PASSWORD }}
+          ssh-domain: ${{ secrets.DEPLOY_ADDRESS }}
+          target-directory: /home/prostynya
+          pre-command: |
+            cd $TARGET_DIRECTORY && 
+            docker-compose down -v --remove-orphans
+          post-command: docker-compose up -d -V --force-recreate

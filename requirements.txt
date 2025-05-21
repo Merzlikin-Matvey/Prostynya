@@ -1,4 +1,4 @@
-pybaseconv==0.0.1
-numpy==2.0.0
-PyYAML==6.0.2
-flask==3.0.3
+pybaseconv
+numpy
+PyYAML
+flask
