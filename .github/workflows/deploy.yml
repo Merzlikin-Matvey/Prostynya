@@ -15,8 +15,4 @@ jobs:
           ssh-user: github-deploy-user
           ssh-password: ${{ secrets.DEPLOY_PASSWORD }}
           ssh-domain: ${{ secrets.DEPLOY_ADDRESS }}
-          target-directory: /home/prostynya
-          pre-command: |
-            cd $TARGET_DIRECTORY && 
-            docker-compose down -v --remove-orphans
-          post-command: docker-compose up -d -V --force-recreate
+          git-clone-by: ssh
