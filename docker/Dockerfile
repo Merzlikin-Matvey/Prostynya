@@ -24,5 +24,6 @@ COPY . .
 
 RUN npm run build
 
+EXPOSE 5000
 
 ENTRYPOINT [".venv/bin/python", "-m", "server"]
