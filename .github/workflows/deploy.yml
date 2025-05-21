@@ -19,6 +19,7 @@ jobs:
           username: github-deploy-user
           password: ${{ secrets.DEPLOY_PASSWORD }}
           script: |
+            docker-compose down
             if [ -d /home/prostynya ]; then
               rm -rf /home/prostynya
             fi
