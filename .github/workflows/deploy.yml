@@ -4,15 +4,24 @@ on:
   push:
     branches: [main]
 
-
 jobs:
   deploy:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: Rxinui/ssh-deploy-repo-action@v1.1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.2
         with:
-          ssh-user: github-deploy-user
-          ssh-password: ${{ secrets.DEPLOY_PASSWORD }}
-          ssh-domain: ${{ secrets.DEPLOY_ADDRESS }}
-          git-clone-by: ssh
+          host: ${{ secrets.DEPLOY_ADDRESS }}
+          username: github-deploy-user
+          password: ${{ secrets.DEPLOY_PASSWORD }}
+          script: |
+            if [ -d /home/prostynya ]; then
+              rm -rf /home/prostynya
+            fi
+            git clone -b main --single-branch git@github.com:Merzlikin-Matvey/Prostynya.git /home/prostynya
+            cd /home/prostynya
+            docker-compose up --build -d || (docker-compose logs && exit 1)
