@@ -1,6 +1,7 @@
 import os
 import yaml
 
+
 def load_main_config():
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
     config_path = os.path.join(project_root, 'config', 'config.yml')
@@ -9,6 +10,7 @@ def load_main_config():
         config = yaml.safe_load(file)
 
     return config
+
 
 def load_trigonometry_config():
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))

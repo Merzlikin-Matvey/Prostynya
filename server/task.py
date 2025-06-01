@@ -1,5 +1,5 @@
 class Task:
-    def __init__(self, task, answer, level, topic, defined = True):
+    def __init__(self, task, answer, level, topic, defined=True):
         self.task = task
         self.answer = answer
         self.level = level

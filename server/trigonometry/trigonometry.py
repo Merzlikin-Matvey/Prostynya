@@ -6,6 +6,7 @@ from server.task import Task
 from .configs import load_trigonometry_config
 import numpy as np
 
+
 def generate_trigonometry_tasks(
         calculations: int = 2,
         relationships: int = 2,

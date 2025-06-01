@@ -2,6 +2,7 @@ import shutil
 import yaml
 import os
 
+
 def copy_and_rename_template(id):
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
     config_path = os.path.join(project_root, 'config', 'config.yml')
@@ -19,6 +20,7 @@ def copy_and_rename_template(id):
     os.makedirs(dst_dir, exist_ok=True)
     dst = os.path.join(dst_dir, f'{id}.tex')
     shutil.copy(src, dst)
+
 
 def edit_file(data, id):
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))

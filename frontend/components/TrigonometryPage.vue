@@ -63,7 +63,7 @@
     <h1 class="level_name"></h1>
     <button class="button" id="generate" @click="sendForm()">Сгенерировать</button>
   </div>
-  <GeneratingAnimation :isGenerating="isGenerating" />
+  <GeneratingAnimationPage :isGenerating="isGenerating" />
   <div v-if="id" class="download-buttons">
     <button class="button" @click="downloadFile(id)" id="download_tasks">Скачать задания</button>
     <button class="button" @click="downloadFile(id + '_solutions')" id="download_solutions">Скачать ответы</button>
@@ -76,7 +76,7 @@ import '../assets/form.css';
 import '../assets/button.css';
 import {watch, onMounted, ref, nextTick} from 'vue';
 import { updateStars, rating, handleMouseOut, handleMouseOver, setRating } from "../skulls";
-import GeneratingAnimation from './GeneratingAnimation.vue';
+import GeneratingAnimationPage from './GeneratingAnimationPage.vue';
 
 
 handleMouseOut();

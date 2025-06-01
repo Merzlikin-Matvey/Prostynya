@@ -6,13 +6,16 @@ import os
 
 app = Flask(__name__, static_folder='../dist', static_url_path='')
 
+
 @app.route('/')
 def serve_vue_app():
     return send_from_directory(app.static_folder, 'index.html')
 
+
 @app.route('/trigonometry', endpoint='serve_trigonometry')
 def serve_vue_app():
     return send_from_directory(app.static_folder, 'index.html')
+
 
 @app.route('/generate_trigonometry', methods=['POST'])
 def generate():
@@ -30,7 +33,6 @@ def generate():
     num_relationships = num_relationships if num_relationships is not None else 0
     num_formulas = num_formulas if num_formulas is not None else 0
 
-
     num = num_calculations + num_relationships + num_formulas
     if num > 239:
         num_calculations = 80
@@ -41,7 +43,6 @@ def generate():
         num_calculations = 5
         num_relationships = 5
         num_formulas = 5
-
 
     if not isinstance(difficulty, int) or difficulty < 1 or difficulty > 5:
         difficulty = 4
@@ -72,6 +73,7 @@ def generate():
     print("Отправка")
     return jsonify({'id': id})
 
+
 @app.route('/download/<file_id>', methods=['GET'])
 def download(file_id):
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__)))
@@ -80,7 +82,3 @@ def download(file_id):
         return send_file(file_path, as_attachment=True)
     else:
         return jsonify({'error': 'File not found'}), 404
-
-
-
-

@@ -1,9 +1,8 @@
 import numpy as np
-import yaml
-import os
 
 from server.task import *
 from server.trigonometry.configs import *
+
 
 def simplify(function, angle, sign, epsilon=10e-4):
     if function == 'sin':
@@ -71,17 +70,17 @@ def get_random_cycle(level):
 
     return cycles
 
+
 def get_random_sign():
     return np.random.choice([-1, 1])
+
 
 def generate_task(level: int = 1, radians: bool = True):
     function = get_random_function(level)
     cycles = get_random_cycle(level)
     sign = get_random_sign()
 
-
     answer = simplify(function, np.pi / 2 * cycles, sign)
-
 
     if radians:
         if cycles % 2 == 0:
@@ -91,18 +90,18 @@ def generate_task(level: int = 1, radians: bool = True):
                 elif cycles // 2 == -1:
                     task_tex = '\\' + function + r'\left(-\pi + \alpha\right)'
                 elif cycles < 0:
-                    task_tex = '\\' + function + r'\left(-' +  str(-cycles // 2) +  r' \pi + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(-' + str(-cycles // 2) + r' \pi + \alpha\right)'
                 else:
-                    task_tex = '\\' + function + r'\left(' +  str(cycles // 2) +  r' \pi + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(' + str(cycles // 2) + r' \pi + \alpha\right)'
             else:
                 if cycles // 2 == 1:
                     task_tex = '\\' + function + r'\left(\pi - \alpha\right)'
                 elif cycles // 2 == -1:
                     task_tex = '\\' + function + r'\left(-\pi - \alpha\right)'
                 elif cycles < 0:
-                    task_tex = '\\' + function + r'\left(-' +  str(-cycles // 2) +  r' \pi + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(-' + str(-cycles // 2) + r' \pi + \alpha\right)'
                 else:
-                    task_tex = '\\' + function + r'\left(' +  str(cycles // 2) +  r' \pi - \alpha\right)'
+                    task_tex = '\\' + function + r'\left(' + str(cycles // 2) + r' \pi - \alpha\right)'
         else:
             if sign > 0:
                 if cycles == 1:
@@ -110,18 +109,18 @@ def generate_task(level: int = 1, radians: bool = True):
                 elif cycles == -1:
                     task_tex = '\\' + function + r'\left(-\dfrac{\pi}{2} + \alpha\right)'
                 elif cycles < 0:
-                    task_tex = '\\' + function + r'\left(-\dfrac{' +  str(-cycles) +  r' \pi}{2} + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(-\dfrac{' + str(-cycles) + r' \pi}{2} + \alpha\right)'
                 else:
-                    task_tex = '\\' + function + r'\left(\dfrac{' +  str(cycles) +  r' \pi}{2} + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(\dfrac{' + str(cycles) + r' \pi}{2} + \alpha\right)'
             else:
                 if cycles == 1:
                     task_tex = '\\' + function + r'\left(\dfrac{\pi}{2} - \alpha\right)'
                 elif cycles == -1:
                     task_tex = '\\' + function + r'\left(-\dfrac{\pi}{2} - \alpha\right)'
                 elif cycles < 0:
-                    task_tex = '\\' + function + r'\left(-\dfrac{' +  str(-cycles) +  r' \pi}{2} - \alpha\right)'
+                    task_tex = '\\' + function + r'\left(-\dfrac{' + str(-cycles) + r' \pi}{2} - \alpha\right)'
                 else:
-                    task_tex = '\\' + function + r'\left(\dfrac{' +  str(cycles) +  r' \pi}{2} - \alpha\right)'
+                    task_tex = '\\' + function + r'\left(\dfrac{' + str(cycles) + r' \pi}{2} - \alpha\right)'
     else:
         if cycles % 2 == 0:
             if sign > 0:
@@ -130,18 +129,19 @@ def generate_task(level: int = 1, radians: bool = True):
                 elif cycles // 2 == -1:
                     task_tex = '\\' + function + r'\left(-180^{\circ} + \alpha\right)'
                 elif cycles < 0:
-                    task_tex = '\\' + function + r'\left(-' +  str(int(-cycles // 2 * 180)) +  r'^{\circ}  + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(-' + str(
+                        int(-cycles // 2 * 180)) + r'^{\circ}  + \alpha\right)'
                 else:
-                    task_tex = '\\' + function + r'\left(' +  str(int(cycles // 2 * 180)) +  r'^{\circ} + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(' + str(int(cycles // 2 * 180)) + r'^{\circ} + \alpha\right)'
             else:
                 if cycles // 2 == 1:
                     task_tex = '\\' + function + r'\left(180^{\circ} - \alpha\right)'
                 elif cycles // 2 == -1:
                     task_tex = '\\' + function + r'\left(-180^{\circ} - \alpha\right)'
                 elif cycles < 0:
-                    task_tex = '\\' + function + r'\left(-' +  str(int(-cycles // 2 * 180)) +  r'^{\circ} + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(-' + str(int(-cycles // 2 * 180)) + r'^{\circ} + \alpha\right)'
                 else:
-                    task_tex = '\\' + function + r'\left(' +  str(int(cycles // 2 * 180)) +  r'^{\circ} - \alpha\right)'
+                    task_tex = '\\' + function + r'\left(' + str(int(cycles // 2 * 180)) + r'^{\circ} - \alpha\right)'
         else:
             if sign > 0:
                 if cycles == 1:
@@ -149,23 +149,22 @@ def generate_task(level: int = 1, radians: bool = True):
                 elif cycles == -1:
                     task_tex = '\\' + function + r'\left(-90^{\circ} + \alpha\right)'
                 elif cycles < 0:
-                    task_tex = '\\' + function + r'\left(' +  str(-cycles * 90) +  r'^{\circ} + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(' + str(-cycles * 90) + r'^{\circ} + \alpha\right)'
                 else:
-                    task_tex = '\\' + function + r'\left(' +  str(cycles * 90) +  r'^{\circ} + \alpha\right)'
+                    task_tex = '\\' + function + r'\left(' + str(cycles * 90) + r'^{\circ} + \alpha\right)'
             else:
                 if cycles == 1:
                     task_tex = '\\' + function + r'\left(90^{\circ} - \alpha\right)'
                 elif cycles == -1:
                     task_tex = '\\' + function + r'\left(-90^{\circ} - \alpha\right)'
                 elif cycles < 0:
-                    task_tex = '\\' + function + r'\left(' +  str(-cycles * 90) +  r'^{\circ} - \alpha\right)'
+                    task_tex = '\\' + function + r'\left(' + str(-cycles * 90) + r'^{\circ} - \alpha\right)'
                 else:
-                    task_tex = '\\' + function + r'\left(' +  str(cycles * 90) +  r'^{\circ} - \alpha\right)'
+                    task_tex = '\\' + function + r'\left(' + str(cycles * 90) + r'^{\circ} - \alpha\right)'
 
     answer_tex = ''
     if answer[0] == '-':
         answer_tex += '-'
-
 
     answer_tex += '\\' + answer[1] + r'{\alpha}'
 
@@ -175,5 +174,3 @@ def generate_task(level: int = 1, radians: bool = True):
         level,
         'Формулы приведения',
     )
-
-

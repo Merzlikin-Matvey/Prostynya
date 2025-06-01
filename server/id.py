@@ -3,7 +3,6 @@ from pybaseconv import Converter, BASE
 import numpy as np
 
 
-
 def generate_id():
     converter = Converter(BASE.DEC, ''.join([str(i) for i in range(10)]) + ''.join([chr(i) for i in range(65, 87)]))
     year = str(datetime.datetime.now().year)[2:]

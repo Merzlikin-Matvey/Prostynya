@@ -1,4 +1,4 @@
-import {onMounted, ref, watch} from "vue";
+import {ref} from "vue";
 
 const rating = ref(0);
 
