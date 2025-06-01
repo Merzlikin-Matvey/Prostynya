@@ -1,39 +1,92 @@
-# prostynya
+# Prostynya
 
-This template should help get you started developing with Vue 3 in Vite.
+**Prostynya** — это генератор заданий по тригонометрии с современным веб-интерфейсом и серверной частью на Python. Проект позволяет быстро создавать индивидуальные диктанты, задачи и решения в формате LaTeX.
 
-## Recommended IDE Setup
+## Возможности
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Генерация заданий по тригонометрии разного уровня сложности
+- Автоматическое создание файлов LaTeX с заданиями и ответами
+- Удобный веб-интерфейс на Vue 3 + TypeScript
+- Гибкая настройка шаблонов и параметров генерации
+- Поддержка различных типов тригонометрических задач (вычисления, формулы, соотношения)
 
-## Type Support for `.vue` Imports in TS
+## Стек технологий
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Frontend:** Vue 3, TypeScript, Vite
+- **Backend:** Python 3, Flask
+- **Latex:** Автоматическая генерация TeX-файлов
+- **Прочее:** YAML-конфиги для настройки уровней и шаблонов
 
-## Customize configuration
+## Быстрый старт
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### 1. Клонирование репозитория
 
 ```sh
+git clone https://github.com/Merzlikin-Matvey/Prostynya.git
+cd Prostynya
+```
+
+### 2. Установка зависимостей
+
+#### Backend
+
+```sh
+cd server
+pip install -r requirements.txt
+```
+
+#### Frontend
+
+```sh
+cd ../
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 3. Запуск проекта
+
+#### Backend
+
+```sh
+cd server
+python -m __main__
+```
+
+#### Frontend
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Откройте [http://localhost:5173](http://localhost:5173) в браузере.
 
-```sh
-npm run build
+## Структура проекта
+
+```
+Prostynya/
+├── server/                # Серверная часть (Flask, генерация заданий)
+│   ├── trigonometry/      # Модули генерации тригонометрических задач
+│   ├── files/             # Сгенерированные TeX-файлы
+│   ├── config/            # YAML-конфиги уровней и шаблонов
+│   └── ...
+├── src/                   # Исходники фронтенда (Vue)
+│   ├── components/        # Vue-компоненты
+│   └── ...
+├── public/                # Статические ресурсы
+├── README.md
+└── ...
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Конфигурация
 
-```sh
-npm run lint
-```
+- Все параметры генерации (уровни сложности, доступные функции, шаблоны) настраиваются через YAML-файлы в `server/config/`.
+- Шаблоны LaTeX-файлов можно изменять под свои нужды.
+
+## Вклад и обратная связь
+
+Буду рад PR, багрепортам и предложениям!  
+[GitHub Issues](https://github.com/Merzlikin-Matvey/Prostynya/issues)
+
+## Лицензия
+
+MIT License
+
