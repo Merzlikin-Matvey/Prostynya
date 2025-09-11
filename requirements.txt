@@ -1,5 +1,5 @@
-pybaseconv==0.0.1
-numpy==2.2.6
-PyYAML==6.0.2
-flask==3.1.1
+pybaseconv
+numpy
+PyYAML
+flask
 flake8
